@@ -49,3 +49,10 @@ print("------Example 2-------")
 while ((line := input("Enter text: ")) != 'quit'):
     print(line)
 
+
+
+print("-----Example 3-------")
+print("list comprehension with walrus operator:")
+
+fruites = ["apple", "Banana", "Kiwi"]
+result = [ length := (len((for word in fruites:))) > 0 ]
