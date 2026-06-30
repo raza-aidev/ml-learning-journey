@@ -17,7 +17,7 @@ print(a is b)
 # verifying the bigger number
 a = 1000
 b = 1000
-
+    
 print(a is b)
 
 print("-----------------------")
