@@ -67,3 +67,12 @@ except for end-of-century years (ending in 00), which must also be divisible by 
 
 # print(status)
 
+
+#---------------example 6 ---------------
+
+""" Conditonal expression """
+
+category = input("Are you and Adult? (yes/no)")
+
+status = "Adult" if category == "yes" else "minor"
+print(f"You are an/a {status}")
