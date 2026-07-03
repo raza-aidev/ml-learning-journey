@@ -64,5 +64,51 @@ It does follwoing things:
 # print("3rd call", week_cal([5, "sunday"]))
 # print("4th call", week_cal(123))
 
+#-------------Example of wild card ----------
+
+# def wildcard(Values):
+#     match Values:
+#         case [name, _]:
+#             return f"Values is {name}"
+
+# print(wildcard(["Abdul", 12]))
+
+#-------------Example of unpacking of sequence ----------
+
+# def guests(details):
+#     match details:
+#         case [hotel, names]:
+#             return f"Welcome to hotel {hotel} {names}"
+#         case [hotel, *names]:
+#             msg = ''
+#             for name in names:
+#                 msg += f"Welcome to hotel {hotel} {name}\n"
+#             return msg
 
 
+# print(guests(["Sunrise", "Amir"]))
+# print(guests(["Grand Shereton", "Akshay", "Mira"]))
+# print(guests(["Seabreez", "Jhon Smow", "Arya", "Sansa"]))
+
+#--------Example of unpacking dictionary---------------
+
+# dist = {"name":"Abdul", "age":"28", "time" : "12:32 PM"}
+
+# match dist:
+#     case {"name":n, "age":a}:  #this case will get exected as it is available in dict and apears in initial case
+#         print(f'Hello {n}, Now you are {a}!')
+#     case {"time":t}:
+#         print(f"Hello, it's {t}")
+#     case _:
+#         print(f"default case")
+
+
+dist = {"name":"Abdul", "age":"28", "time" : "12:32 PM"}
+
+match dist:
+    case {"nam":n, "age":a}:
+        print(f'Hello {n}, Now you are {a}!')
+    case {"time":t}:
+        print(f"Hello, it's {t}")
+    case _:
+        print(f"default case")
