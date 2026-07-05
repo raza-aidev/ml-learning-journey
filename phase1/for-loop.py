@@ -26,3 +26,25 @@
 
 # for i in range(n,0, -1):
 #     print("*"*i)
+
+# decreasing right angle triangle
+
+# n = int(input("Enter the size of the triandle: "))
+# for i in range(n):
+#     for j in range(i, n):
+#         print("*",end=" ")
+#     print()
+
+#  right angle triangle on the right side
+"""
+  *
+ **
+***
+
+"""
+n = int(input("Enter the size of the triangle: "))
+
+for i in range(n):
+    for j in range(i,n):
+        print(" ", end="")
+    print("*"*(i+1))
