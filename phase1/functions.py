@@ -47,5 +47,10 @@ def multiplication(a, b,/):
 
 print("Result of multiplication is: ", multiplication(12,2))
 
+def area_of_rectangle(*, length, breadth, height):
+    """ keyword-type only """
+    return length*breadth*height
+
+print("Area of a rectangle: ", area_of_rectangle(length=10, breadth=9, height=12))
 
 
