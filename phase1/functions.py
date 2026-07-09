@@ -78,5 +78,7 @@ def get_total_marks_of_student(name, *marks):
 def generate_dic_for(**details):
     return f"The dictionary of requested details: {details}"
 
-print(generate_dic_for(name="Abdul Razzak", age=27, city="Pune"))
-print(generate_dic_for(Object="Smart Phone", Brand="Apple", Model="I-Phone 17 Pro", Storage="1TB"))
+# print(generate_dic_for(name="Abdul Razzak", age=27, city="Pune"))
+# print(generate_dic_for(Object="Smart Phone", Brand="Apple", Model="I-Phone 17 Pro", Storage="1TB"))
+
+PI = 3.14
