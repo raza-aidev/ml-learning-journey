@@ -17,3 +17,22 @@ for items in list1:
 
 for i in range(len(list1)):
     print(f"Index: {i}, Value: {list1[i]}")
+
+
+print("-----------example of enumrate----------")
+for index, value in enumerate(list1):
+    print(f"Index: {index} and Value: {value}")
+
+print("Making copy of a list:")
+list_copy1 = list1   # this does not make a copy but the new variable name "Label" is referencing to the list object of list1
+
+print(list_copy1)
+list_copy = list1[::]
+print(f"Actual copy of a list: {list_copy}")
+
+
+print("Making changes in the 1st example of list copy and tcheck if it is making any change to original one.")
+list_copy1[2]="Hello"
+print(f"printing original list: {list1}")
+list_copy[1] = "Changed Value"
+print(f"{list1}")
