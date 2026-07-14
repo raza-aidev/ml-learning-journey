@@ -29,3 +29,16 @@ print(f"Flatening of List of list: {res2}")
 
 res3 = [[x*y for x in range(5)] for y in range(5)]
 print("Nested list creation: {}".format(res3))
+
+
+#joining th elist using the list comprehension
+
+l1 = [1,2,3]
+l2 = [4,5,6]
+
+list1 = [items for sublist in [l1, l2] for items in sublist] # 2 fors here meaning netsed for loops
+# list1 = []
+# for item in [l1, l2]:
+#     for x in item:
+#         list1.append(x)
+print(f"Joining {l1} and {l2}: {list1}")
