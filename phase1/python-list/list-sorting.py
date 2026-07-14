@@ -19,3 +19,4 @@ def last_digit(x):
 list3 = [12, 15, 110, 43, 67]
 list3.sort(key=last_digit)
 print("List sorted based on callback funtion: {}".format(list3))
+
