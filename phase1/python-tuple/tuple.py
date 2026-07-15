@@ -43,3 +43,26 @@ print("Looping tuple using while -> ")
 while count< len(tuple2):
     print(f"{tuple2[count]}")
     count +=1
+
+
+t1 = (1, 22, 53, 12)
+t2 = (22, 34, 54, 22)
+print("Contcatination of 2 tuple to get new tuple: ")
+t3 = t1 + t2
+print("Adding {} and {} to get: {}".format(t1, t2, t3))
+
+print("[t1, t2]: ", [t1, t2])
+# t1 = list(t1)
+# t2 = list(t2)
+tuple4 = [items for sublist in [t1, t2] for items in sublist]
+tuple4 = tuple(tuple4)
+
+print("Adding 2 tuples using list comprehension: {}".format(tuple4))
+
+tuple5 = ()
+for subtuple in [t1, t2]:
+    for item in subtuple:
+        tuple5 += item
+
+print("Tuple5: ",tuple5)
+
