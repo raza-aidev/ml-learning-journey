@@ -59,10 +59,45 @@ tuple4 = tuple(tuple4)
 
 print("Adding 2 tuples using list comprehension: {}".format(tuple4))
 
-tuple5 = ()
+tuple5 = []
 for subtuple in [t1, t2]:
     for item in subtuple:
-        tuple5 += item
+        tuple5.append(item)
 
-print("Tuple5: ",tuple5)
+print("Tuple5: ",tuple(tuple5))
 
+#find the unique element and print the tuple
+tuple6 = (1, 9, 1, 6, 3, 4, 5, 1, 1, 2, 5, 6, 7, 8, 9, 2)
+unique_tuple = []
+for item in tuple6:
+    if item not in unique_tuple:
+        unique_tuple.append(item)
+unique_tuple = tuple(unique_tuple)
+print("Unique values in tuple: ", unique_tuple)
+
+t1 = (1,)
+t2 = (23, 42)
+t3 = t2 + (2,)
+print(t3)
+
+sum = 0
+for item in tuple6:
+    sum += item
+
+print(f"Sum of tuple {tuple6}: {sum}")
+
+import random
+
+tuple7 = ()
+for i in range(5):
+    x = random.randint(0,100)
+    tuple7 += (x,)
+
+print(f"Random 5 values of tuple: {tuple7}")
+
+# tuple8 = ()
+# for i in range(5):
+#     x = random.randfloat(0.0,99.9)
+#     tuple8 += (x,)
+
+# print(f"{tuple8}")
