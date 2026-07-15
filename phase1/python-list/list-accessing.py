@@ -36,3 +36,9 @@ list_copy1[2]="Hello"
 print(f"printing original list: {list1}")
 list_copy[1] = "Changed Value"
 print(f"{list1}")
+
+list2 = [2, 14, 1, 0, 16]
+print(f"{list2}")
+
+list3 = [[1,2,3],['a', 'b', 'c'],[12.45, 'letters', 'build']]
+print(f"accessing ")
