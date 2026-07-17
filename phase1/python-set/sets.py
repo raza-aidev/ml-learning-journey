@@ -34,6 +34,40 @@ print(f'Set using list comprehension: {set1}')
 set2 = {(obj1, obj2) for obj1 in range(5) for obj2 in range(6)}
 print(f"nested if else: {set2}")
 
+# import frozenset
 
+# set3 = frozenset({1,2,3.4})
+# print(f"Original frozen set: {set3}")
+
+# # set3.add(5)
+# set3.remove(3)
+
+
+
+#Accessing the set
+set4 = set(range(20))
+print(f"set4: {set4}")
+result = set()
+for obj in set4:
+    if obj%2 == 0:
+        result.add(obj) 
+
+print(f"result: {result}")
+
+#acessing using using methods
+
+set5 = {12, 11, 2, 54}
+if set5.issubset(set4):
+    print(f"Set 5 is the subset of set4: ")
+else:
+    print(f"set 5 is not the sub-set of set4:")
+
+#accesing usinh combination iteration
+
+from itertools import combinations
+set6 = set(range(5))
+list2 = {tup for tup in combinations(set6, 2)}
+
+print("list of combination of tup: ",list2)
 
 
