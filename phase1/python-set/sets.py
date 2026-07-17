@@ -70,4 +70,29 @@ list2 = {tup for tup in combinations(set6, 2)}
 
 print("list of combination of tup: ",list2)
 
+# Adding elements in Set
 
+lang1 = {"C", "C#", "Perl", "C++"}
+lang2 = {"Python", "Java", "JavaScritp", "C++", "Type-Script"}
+
+
+# lang2.add(5)
+
+
+lang2.update({"c-Py"})
+
+print(f"Lang2: {lang2}")
+
+lang3 = lang1 | lang2
+print(f"Lang3: {lang3}")
+
+
+lang4 = lang1.union(lang2)
+print(f"Lang4: {lang4}")
+
+#Adding elemenst in python using Set comprehension 
+list3 = ["Shell", "Groovey"]
+
+# print(obj)
+lang5 = [obj for obj in list3]
+print(f"Lang5: {lang5}")
