@@ -96,3 +96,14 @@ list3 = ["Shell", "Groovey"]
 # print(obj)
 lang5 = [obj for obj in list3]
 print(f"Lang5: {lang5}")
+
+# lang1.remove("Perl")
+# print(f"after removing the Perl from lang1: {lang1}")
+
+# lang1.discard("Perl")
+# print(f"Removing non-existing 'Perl' object from Set Lang1: {lang1}")
+
+# lang1.pop()
+# print(f"Popping element: {lang1}") #pops the arbitatory element from the Set
+
+
