@@ -174,4 +174,29 @@ while True:
         break
 
     
- 
+print("===============Joining sets===================")
+
+st1 = {1, 23, 4 ,5 ,66}
+st2 = {2, 3, 4, 6.7, 8}
+
+st3 = st1 | st2  # using union operator
+print(f"Set items: {st3}")
+
+st4 = st1.union(st2) #uing uinon method
+print(f"Using using method: {st4}")
+
+st5 = {*st1, *st2}
+print(f"unpacking st1:{st1} and st2: {st2} to make st4: {st4}")
+
+st6 = {1, 2, 3, 4, 5, 12}
+st7 = {12, 23}
+st8 = {x for sublist in [st6, st7] for x in sublist} 
+
+print(f"using set comprehension St8: {st8}")
+
+# st6.update(st7)
+
+# print(f"st6: {st6}")
+
+st9 = st6 & st7
+print(f'st9: {st9}')
