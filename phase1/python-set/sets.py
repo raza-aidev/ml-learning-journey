@@ -147,3 +147,31 @@ s2 = {3, 4, 5, 6}
 
 s4 = s1.intersection_update(s2)
 print(f"Intersection Update of s1 and s2: {s1}")
+
+
+for item in s2:
+    print(f"Item 1: {item}")
+
+for index, value in enumerate(s2):
+    print(f"Index: {index} and Value: {value}")
+
+#adding items in set using add() method
+
+new_set = set()
+for item in range(6):
+    new_set.add(item)
+
+print(f"New Set: {new_set}")
+
+latest_set = {1, True, "sarah", "Jhon", 12.3}
+new_set = iter(latest_set)
+
+while True:
+    try:
+        item = next(new_set)
+        print(f"{item}")
+    except StopIteration:
+        break
+
+    
+ 
