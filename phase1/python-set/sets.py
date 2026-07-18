@@ -106,4 +106,44 @@ print(f"Lang5: {lang5}")
 # lang1.pop()
 # print(f"Popping element: {lang1}") #pops the arbitatory element from the Set
 
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
 
+s1.difference_update(s2)
+print(f"Set 1 difference update of Set 2 is: {s1}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+result = s1 ^ s2 #We need to store the result in new set
+print(f"Set 1 Syemmetric difference of Set 2: {result}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+result2 = s1.symmetric_difference(s2) # It returns a new set 
+print(f"Set 1 symmetric difference of Set 2: {result2}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+s1.symmetric_difference_update(s2)  # it returns a new set
+print(f"Set 1 symmetric difference of Set 2: {s1}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+s5 = s1.intersection(s2)
+print(f"Set 1 intersection set 2: {s5}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+s3 = s1 - s2
+print(f"s1 - s2 = {s3}")
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+
+s4 = s1.intersection_update(s2)
+print(f"Intersection Update of s1 and s2: {s1}")
