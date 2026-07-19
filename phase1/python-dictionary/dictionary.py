@@ -30,3 +30,31 @@ for key, value in d1.items():
 
 for key in d1.keys():
     print(f"Key: {key}")
+
+print("+++++++++++++++Duictionaru modification+++++++++++")
+
+person = {'name':'Raza', 'city':'Jhalna', 'age':22}
+print(f"Person details initially: {person}")
+
+person["age"] = 23
+print(f"Latest details of {person['name']}: {person}")
+
+person["Blood Group"] = "T+"
+print(f"New details of {person['name']}: {person}")
+
+print('Use of setdefault() funtion:')
+person.setdefault('surname','pahadi')
+
+print(f"Details of {person['name']} {person['surname']}: {person}")
+
+print("+++++++++++poping out the keys from dictionary++++++++++++")
+popped_value = person.pop('Blood Group')
+
+print(f"The popped out value is: {popped_value} from {person}")
+
+pop_items = person.popitem()
+print(f'After doing popitem the dictionary will look like: {person}')
+
+del person["name"]
+print(f'using del keyword to delete the specific object from Dictionary: {person}')
+
