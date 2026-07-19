@@ -31,7 +31,7 @@ for key, value in d1.items():
 for key in d1.keys():
     print(f"Key: {key}")
 
-print("+++++++++++++++Duictionaru modification+++++++++++")
+print("+++++++++++++++Dictionaru modification+++++++++++")
 
 person = {'name':'Raza', 'city':'Jhalna', 'age':22}
 print(f"Person details initially: {person}")
@@ -58,3 +58,25 @@ print(f'After doing popitem the dictionary will look like: {person}')
 del person["name"]
 print(f'using del keyword to delete the specific object from Dictionary: {person}')
 
+print("++++++++++++++++++++++joining dict++++++++++++++++++++")
+
+marks = {"Sattya":89, "Mubin":45, "Ashfaq": 90}
+marks2 = {"Ratan":67, "siddhi":44, "Ravi": 99}
+
+combine_marks = marks | marks2
+print(f"New marks: {combine_marks}")
+
+marks |= marks2
+print(f"Marks: {marks}")
+
+d1 = {'reha':100, 'Rohan':99}
+marks.update(d1)
+print(f'marks: {marks}')
+
+d3 = {"Rudra":88, "Rishi":90}
+new_marks = {**d3, **marks}
+print("Combining dicts by unpacking oerator: {}".format(new_marks))
+
+d4 = {"Rohini":77, "Rithru": 55}
+latest_reg = marks.setdefault("Rakesh",67)
+print(f"Marks: {marks}")
