@@ -80,3 +80,27 @@ print("Combining dicts by unpacking oerator: {}".format(new_marks))
 d4 = {"Rohini":77, "Rithru": 55}
 latest_reg = marks.setdefault("Rakesh",67)
 print(f"Marks: {marks}")
+
+print("==================Deep copy and shallow copy++++++++++++")
+from copy import deepcopy
+
+original_dictionary = {"Name":"Sarthak", "City": "Mumbai", "age":27, "Occupation":{"Educations":"Degree","skills":["Pyhthon","Data Sceience"]}}
+
+copy_dictionary = deepcopy(original_dictionary)
+copy_dictionary["age"] = 30
+copy_dictionary["Occupation"]["skills"].append("Machine Learning")
+
+
+print(f'Original Dictionary:{original_dictionary}')
+print(f'Deep copy of the dictionary: {copy_dictionary}')
+
+print('Shallow copy using copy() and dict() method')
+copy2_dictionary = original_dictionary.copy()
+copy2_dictionary["Occupation"]["Educations"]="Master's Degree"
+
+print(f'Copy of the dictionary: {copy2_dictionary}')
+print(f'Original dictionary: {original_dictionary}')
+
+copy3_dictionary = dict(original_dictionary)
+copy3_dictionary["City"] = "Bangalor"
+print(f"Original Dictionary: {copy3_dictionary}")
