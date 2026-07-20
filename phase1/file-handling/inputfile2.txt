@@ -1,0 +1,20 @@
+Writing to a file involves opening the file in a specific mode, writing data to it, and then closing the file to ensure that all data is saved and resources are released. Python provides a built-in function open() to handle file operations and various methods for writing data.
+
+Opening a File for Writing
+Opening a file for writing is the first step in performing write operations in Python. The open() function is used to open files in different modes, each suited for specific use cases.
+
+The open() Function
+The open() function in Python is used to open a file. It requires at least one argument, the name of the file, and can take an optional second argument that specifies the mode in which the file should be opened.
+
+File Modes for Writing
+Following are the main modes you can use to open a file for writing −
+
+w (Write mode) − Opens the file for writing. If the file exists, it truncates (empties) the file before writing. If the file does not exist, it creates a new file.
+
+a (Append Mode) − Data is written at the end of the file. If the file does not exist, it creates a new file.
+
+x (Exclusive Creation Mode) − Opens the file for exclusive creation. If the file already exists, the operation fails.
+
+b (Binary Mode) − When used with other modes, opens the file in binary mode.
+
++ (Update Mode) − Opens the file for updating (reading and writing).
