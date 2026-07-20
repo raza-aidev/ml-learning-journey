@@ -104,3 +104,24 @@ print(f'Original dictionary: {original_dictionary}')
 copy3_dictionary = dict(original_dictionary)
 copy3_dictionary["City"] = "Bangalor"
 print(f"Original Dictionary: {copy3_dictionary}")
+
+
+print("================Nested Dictionary=============")
+dict1 = {}
+
+outer_keys = ["Outer_Key1", "Outer_Key2"]
+for key in outer_keys:
+    dict1[key] = {"key1":"Value1", "key2":"Value2"}
+
+print(f"Nested dictionary: {dict1}")
+
+print("Accessing dictionary:")
+
+city = copy3_dictionary.get("City","Not Found")
+print(f"City: {city}")
+skill_language = copy3_dictionary.get("Occupation","Dictionary Not Found").get("skills","List Not Found")[0]
+print(skill_language)
+
+skill_language2 = copy3_dictionary.get("occupation",{}).get("skills",[])
+print(skill_language2)
+
