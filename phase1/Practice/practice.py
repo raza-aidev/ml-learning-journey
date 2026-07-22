@@ -28,20 +28,24 @@ The third line contains the product of the two numbers.
 
 """
 
-a, b = int(input("Enter Value of a: ")), int(input("Enter Value of b: "))
+# a, b = int(input("Enter Value of a: ")), int(input("Enter Value of b: "))
 
-print(a+b)
-print(a-b)
-print(a*b)
+# print(a+b)
+# print(a-b)
+# print(a*b)
 
 
 """
 The provided code stub reads two integers, a and b, from STDIN.
 
 Add logic to print two lines. The first line should contain the result of integer division, a // b. 
-The second line should contain the result of float division,  / .
+The second line should contain the result of float division, a / b.
 
 No rounding or formatting is necessary.
 
 """
 
+a , b = int(input("Enter Value of a: ")), int(input("Enter Value of b: "))
+
+print(a//b)
+print(a/b)
