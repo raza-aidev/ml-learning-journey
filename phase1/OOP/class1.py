@@ -72,3 +72,58 @@ d1 = Dog("Buggy", 3)
 d2 = Dog("Lucy")
 d1.bark()
 d2.bark()
+
+
+""" 
+we can also name self with other name, but the condition is it whoulc be the 1st parameter in the function
+also Oython recommend that we should use self only.
+
+Lets see some examples below
+
+"""
+
+class Guests:
+    
+    hotel_name = "Sharaton";
+    
+    def __init__(myObject, name):
+        myObject.name = name
+
+    def greeting(abc):
+        return f"Welcome to the {abc.hotel_name}, Mr/Mrs.{abc.name}!"
+    
+    def welcome(self):
+        message = self.greeting()
+        print(message)
+
+g1 = Guests("Aatir")
+
+g1.welcome()
+
+
+
+"""
+Inside the editor, complete the following steps:
+Create a class Student with an __init__ that takes name and grade, and stores them as properties
+Create an object s1 with name "Anna" and grade "A"
+Print the grade of s1
+Change the grade of s1 to "B"
+Print the updated grade
+"""
+
+class Student:
+
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+    
+s1 = Student("Ana", "A")
+
+print(f"{s1.name}'s Grade: {s1.grade}")
+
+s1.grade = "B"
+#Changing the property of the class
+print(f"{s1.name}'s Grade: {s1.grade}")
+
+
+
