@@ -171,3 +171,52 @@ print(c2.name, c2.age)
 print(Cat.is_valid_name("Alid"))
 print(Cat.is_valid_name("B"))
 
+class Animals:
+
+    name = "Pinku"
+
+    def __init__(self, name):
+        self.name = name
+    
+    def message(self):
+        return(f"Hey it original message.") 
+    
+    def bark(self):
+        return f"{self.name} Bark...!"
+    
+
+    @classmethod
+    def get_the_name(cls):
+        return cls(f"{cls.name}")
+    
+
+
+class Dog(Animals):
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        super().__init__(self.name)
+        
+    
+    def message(self):
+        original = super().message()
+
+        # return f"It's method overriding!"
+        return(f"Hey it's {self.name} and i'm {self.age}, and It's method overriding!, {original}")
+    
+    def fetch(self):
+        return f"Woof Woof i got it"
+
+d1 = Dog("Ruru", 4)
+print(d1.message())
+print(d1.bark())
+
+d2 = Animals("Ori")
+print(d2.message())
+print(d2.bark())
+
+# print(d2.fetch())
+print(d1.get_the_name())
+
+
