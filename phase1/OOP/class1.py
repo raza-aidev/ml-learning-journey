@@ -126,4 +126,48 @@ s1.grade = "B"
 print(f"{s1.name}'s Grade: {s1.grade}")
 
 
+print('---------------use case of __str__() method----------')
+
+class Student2:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def __str__(self):
+        return f"I'm {self.name}, and I'm {self.age}"
+    
+s1 = Student2("Sneha", "34")
+print(s1)
+
+print("--------------class methods---------")
+
+class Cat:
+
+    def __init__(self, name , age):
+        self.name = name
+        self.age = age
+
+    @classmethod
+    def get_name_of_cat(cls, name, age):
+        cls.name = name
+        cls.age = age
+        return f"I'm {cls.name}, i'm {cls.age}. Meow!"
+
+    @classmethod
+    def get_nameless_cat_details(cls):
+        return cls("unknown", 0)
+
+    @staticmethod
+    def is_valid_name(name):
+        return len(name)>=3 and name.isalpha()
+
+
+c1 = Cat.get_name_of_cat("Tom", 3)
+print(c1)
+c2 = Cat.get_nameless_cat_details() 
+print(c2.name, c2.age)
+
+print(Cat.is_valid_name("Alid"))
+print(Cat.is_valid_name("B"))
 
