@@ -185,10 +185,7 @@ class Animals:
         return f"{self.name} Bark...!"
     
 
-    @classmethod
-    def get_the_name(cls):
-        return cls(f"{cls.name}")
-    
+   
 
 
 class Dog(Animals):
@@ -216,7 +213,52 @@ d2 = Animals("Ori")
 print(d2.message())
 print(d2.bark())
 
-# print(d2.fetch())
-print(d1.get_the_name())
 
 
+class Flower: 
+    def get_name(self):
+        return "Its the parent"
+
+class Rose(Flower):
+    def get_name(self):
+        return "Its Rose"
+    
+class Sunflower(Flower):
+    def get_name(self):
+        return "Its sunflower"
+
+list1 = [Flower(), Rose(), Sunflower()]
+
+for flower in list1:
+    print(f"{flower.get_name()}")
+
+class Mom:
+    def __init__(self, name):
+        self.name = name
+    
+    def can_cook(self):
+        return f"{self.name} can cook the best food"
+    
+class Dad:
+    def __init__(self, name, passion):
+        self.name = name
+        self.passion = passion
+    
+    def can_cook(self):
+        return "Yes he can..."
+    
+    def play_football(self, passion):
+        return f"He's Passion is: {self.passion}"
+
+class Son(Mom, Dad):
+    def __init__(self, name, passion):
+        self.name = name
+        super().__init__(name)
+        super().__init__(name, passion)
+
+    def hobbies(hobby):
+        return f"his hobby is: {self.hobby}"
+
+
+s1 = Son("Rahul", "Football")
+print(f"{s1.can_cook()}")
