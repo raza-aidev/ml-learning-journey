@@ -232,33 +232,92 @@ list1 = [Flower(), Rose(), Sunflower()]
 for flower in list1:
     print(f"{flower.get_name()}")
 
-class Mom:
-    def __init__(self, name):
+# class Mom:
+#     def __init__(self, name):
+#         self.name = name
+    
+#     def can_cook(self):
+#         return f"{self.name} can cook the best food"
+    
+# class Dad:
+#     def __init__(self, name, passion):
+#         self.name = name
+#         self.passion = passion
+    
+#     def can_cook(self):
+#         return "Yes he can..."
+    
+#     def play_football(self, passion):
+#         return f"He's Passion is: {self.passion}"
+
+# class Son(Mom, Dad):
+#     def __init__(self, name, passion):
+#         self.name = name
+#         super().__init__(name)
+#         super().__init__(name, passion)
+
+#     def hobbies(hobby):
+#         return f"his hobby is: {self.hobby}"
+
+
+# s1 = Son("Rahul", "Football")
+# print(f"{s1.can_cook()}")
+
+
+print("++++++++++++++Inheritance+++++++++++")
+
+class Animals:
+    def __init__(self, speciese, name):
         self.name = name
+        self.speciese = speciese
     
-    def can_cook(self):
-        return f"{self.name} can cook the best food"
+
+class Dog(Animals):
+
+    def __init__(self, speciese, name):
+        super().__init__(speciese, name)
+
+    def type_of_speciese(self):    
+        return f"This is a {self.speciese}. It's name is {self.name}"
     
-class Dad:
-    def __init__(self, name, passion):
-        self.name = name
-        self.passion = passion
+    def bark(self):
+        return f"it can bark! Woof!"
+
+class Cat(Animals):
+    def __init__(self, speciese, name):
+        super().__init__(speciese, name)
+
+    def can_hiss(self):
+        return f"it is a {self.speciese}, it can hiss!!"
+
+c = Cat("Cat", "Tom")
+print(c.can_hiss())
+
+d = Dog("Dog", "Rufas")
+print(d.type_of_speciese())
+print(d.bark())
+
+print("-----------Multilevel Inheritance------------")
+
+class Class1:
+    def m(self):
+        return "It's class 1"
     
-    def can_cook(self):
-        return "Yes he can..."
-    
-    def play_football(self, passion):
-        return f"He's Passion is: {self.passion}"
-
-class Son(Mom, Dad):
-    def __init__(self, name, passion):
-        self.name = name
-        super().__init__(name)
-        super().__init__(name, passion)
-
-    def hobbies(hobby):
-        return f"his hobby is: {self.hobby}"
+    def check_MRO(self):
+        return "found in Class 1"
 
 
-s1 = Son("Rahul", "Football")
-print(f"{s1.can_cook()}")
+class Class2(Class1):
+    def m(self):
+        return "It's class 2"
+
+class Class3(Class2):
+    def m(self):
+        return "It's class 3"
+
+
+c = Class3()
+print(c.m())
+print(c.check_MRO())
+print(Class3.__mro__) #__mro__ returns method resolution order in tuple 
+print(Class3.mro()) #mro() method returns the same method resolution order in list 
