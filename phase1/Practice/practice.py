@@ -85,12 +85,29 @@ Note that the code stub provided reads from STDIN and passes arguments to the is
 
 """
 
-def is_leap(year):
-    if(year%4 == 0 and year%100 != 0 or year%400 == 0):
-        return True
-    else:
-        return False
+# def is_leap(year):
+#     if(year%4 == 0 and year%100 != 0 or year%400 == 0):
+#         return True
+#     else:
+#         return False
 
-year = int(input("Enter the year: "))
+# year = int(input("Enter the year: "))
 
-print(is_leap(year))
+# print(is_leap(year))
+
+
+"""
+The included code stub will read an integer, , from STDIN.
+
+Without using any string methods, try to print the following:
+
+
+Note that "" represents the consecutive values in between.
+
+"""
+
+n = int(input("Enter the numeber to form entire equesnce: "))
+
+for i in range(n+1):
+    if(i>0):
+        print(f"{i}", end="")
