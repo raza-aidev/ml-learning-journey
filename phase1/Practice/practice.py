@@ -106,8 +106,40 @@ Note that "" represents the consecutive values in between.
 
 """
 
-n = int(input("Enter the numeber to form entire equesnce: "))
+# n = int(input("Enter the numeber to form entire equesnce: "))
 
-for i in range(n+1):
-    if(i>0):
-        print(f"{i}", end="")
+# for i in range(n+1):
+#     if(i>0):
+#         print(f"{i}", end="")
+
+
+"""
+
+Given the names and grades for each student in a class of  students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
+
+Note: If there are multiple students with the second lowest grade, order their names alphabetically and print each name on a new line.
+
+
+The first line contains an integer, N , the number of students.
+The  subsequent lines describe each student over 2N lines.
+- The first line contains a student's name.
+- The second line contains their grade.
+
+"""
+
+grades = []
+N = int(input("Enter number of students: "))
+for entry in range(N):
+    details = []
+    name = input(f"Enter name of {entry}: ")
+    details.append(name)
+    grade = float(input(f"Enter Grade of {entry}: "))
+    details.append(grade)
+    print(details)
+    grades.append(details)
+    print(grades)
+
+print(f"Grades: {grades}")
+
+for grade in grades:
+    grades[grade] 
