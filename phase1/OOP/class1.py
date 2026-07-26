@@ -321,3 +321,49 @@ print(c.m())
 print(c.check_MRO())
 print(Class3.__mro__) #__mro__ returns method resolution order in tuple 
 print(Class3.mro()) #mro() method returns the same method resolution order in list 
+
+
+class ClassI:
+    def who_is_it(self):
+        return print("It's the ClassI")
+    
+
+class ClassII(ClassI):
+    def who_is_it(self):
+        return print("It's the ClassII")
+
+class ClassIII(ClassI):
+    def who_is_it(self):
+        return print("It's the classIII")
+
+class ClassIV(ClassII, ClassIII):
+    pass
+
+
+c = ClassIV()
+c.who_is_it()
+print(ClassIV.__mro__)
+
+class ClassI:
+    def who_is_it(self):
+        return print("It's the ClassI")
+    
+
+class ClassII(ClassI):
+    def who_is_it(self):
+        return print("It's the ClassII")
+
+class ClassIII(ClassI):
+    def who_is_it(self):
+        return print("It's the classIII")
+
+class ClassIV(ClassIII, ClassII):
+    pass
+
+
+c = ClassIV()
+c.who_is_it()
+
+print(ClassIV.mro())
+
+# it uses c3 linearization in MRO to check the object in the class
