@@ -32,6 +32,13 @@ class Book:
     def __sub__(self, other):
         return self.num_pages - other.num_pages
     
+    def __getitem__(self, key):
+        if key == 'title':
+            return self.title
+        elif key == 'auther':
+            return self.author
+        else:
+            return f"key '{key}' was not found"
 
 
 
@@ -54,7 +61,35 @@ book3 = Book("Bad Habbits", "V.R Vishnu", 146)
 # print("Bad" in book2)
 # print("Bad" in book3)
 
-print(book1 + book2)
-print(book2 - book1)
+# print(book1 + book2)
+# print(book2 - book1)
+
+# print(book1["title"])
+# print(book1["auther"])
+
+import random
+
+class Dice:
+
+    def __init__(self, rolls):
+        self.rolls = rolls
+        self.count = 0
+    
+    def __iter__(self):
+        """ it returns itself """
+        return self
+    
+    def __next__(self):
+        if self.count < self.rolls:
+            self.count += 1
+            return random.randint(1,6)
+        else:
+            raise StopIteration
 
 
+
+dice = Dice(4)
+# print(type(dice))
+for die in dice:
+    print(die)
+    
