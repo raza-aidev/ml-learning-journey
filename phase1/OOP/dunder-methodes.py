@@ -26,8 +26,13 @@ class Book:
     def __contains__(self, keyword):
         return keyword in self.title
 
-    def __getItems__(self, key):
-        return s
+    def __add__(self, other):
+        return self.num_pages + other.num_pages
+    
+    def __sub__(self, other):
+        return self.num_pages - other.num_pages
+    
+
 
 
 
@@ -45,10 +50,11 @@ book3 = Book("Bad Habbits", "V.R Vishnu", 146)
 # print(book1 < book2)
 # print(book1 > book2)
 
-print("Bad" in book1)
-print("Bad" in book2)
-print("Bad" in book3)
+# print("Bad" in book1)
+# print("Bad" in book2)
+# print("Bad" in book3)
 
-
+print(book1 + book2)
+print(book2 - book1)
 
 
