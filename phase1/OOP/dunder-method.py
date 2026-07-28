@@ -88,8 +88,76 @@ class Dice:
 
 
 
-dice = Dice(4)
-# print(type(dice))
-for die in dice:
-    print(die)
+# dice = Dice(4)
+# # print(type(dice))
+# for die in dice:
+#     print(die)
     
+# class Details:
+
+#     def __init__(self, list_of_names):
+#         self.list_of_names = list_of_names
+        
+    
+#     def __setitem__(self, index, value):
+#         if len(self.list_of_names) > index:
+#             self.list_of_names[index] = value
+#         else:
+#            print(f"The index : {index} is out of range!")
+
+#     def __str__(self):
+#         return f"The list of string: {self.list_of_names}"
+    
+
+# d = Details(["Shariq", "Murtaza", "Ali"])
+
+# print(d)
+# d[1] = "atif"
+
+# print(d)   
+
+
+class Numbers:
+
+    def __init__(self, num):
+        self.num = num
+        self.counter = 0
+    
+    def __setitem__(self, index, value):
+        if len(self.num) > index:
+            self.num[index] = value
+        else:
+            print(f"The Index: {index} is out of range.")
+    
+           
+    def __str__(self):
+        return f"The List of Numbers: {self.num}"
+
+nums = Numbers([1, 2, 4, 3, 5])
+
+# print(n)
+# n[3] = 45
+
+# print(n)
+
+
+class Counter:
+
+    def __init__(self, num):
+        self.num = num
+        self.current = 0
+
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.num == 0 or self.current > self.num:
+            raise StopIteration
+        
+        self.current += 1
+        return self.current
+    
+
+for count in Counter(6):
+    print(f'{count}', end=",")
