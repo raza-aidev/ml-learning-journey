@@ -320,6 +320,54 @@ class Circular:
 
 colors = Circular(["Red", "Blue", "Green"])
 
-print(colors)
-for c in colors:
-    print(c)
+# print(colors)
+# for c in colors:
+#     print(c)
+
+
+"""
+Question 4: Odd Numbers
+
+Create an iterator that returns odd numbers between two given numbers.
+
+Example
+
+OddNumbers(7, 19)
+
+Output
+
+7
+9
+11
+13
+15
+17
+19
+"""
+
+class OddNumbers:
+
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.start == self.end or self.start >= self.end:
+            raise StopIteration
+        
+        while self.start <= self.end:
+
+            if self.start%2 != 0:
+                odd = self.start
+                self.start += 1
+                return odd
+            self.start += 1
+
+ 
+
+for odd in OddNumbers(7, 19):
+    print(odd)
+            
