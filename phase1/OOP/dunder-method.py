@@ -141,6 +141,33 @@ nums = Numbers([1, 2, 4, 3, 5])
 # print(n)
 
 
+"""
+Question 1: Count from 1 to N
+
+Create a class Counter.
+
+Requirements:
+
+Constructor accepts n.
+Iterate from 1 to n.
+Stop after n.
+
+Example:
+
+counter = Counter(5)
+
+for i in counter:
+    print(i)
+
+Output
+
+1
+2
+3
+4
+5
+"""
+
 class Counter:
 
     def __init__(self, num):
@@ -152,12 +179,147 @@ class Counter:
         return self
     
     def __next__(self):
-        if self.num == 0 or self.current > self.num:
+        if self.num == 0 or self.current >= self.num:
             raise StopIteration
         
+        value = self.current
         self.current += 1
-        return self.current
+        return value
     
 
-for count in Counter(6):
-    print(f'{count}', end=",")
+# for count in Counter(6):
+#     print(f'{count}')
+
+"""
+Question 2: Countdown
+
+Create a class that counts backwards.
+
+Example
+
+counter = Countdown(5)
+
+Output
+
+5
+4
+3
+2
+1
+"""
+
+
+class BackCount:
+
+    def __init__(self, num):
+        self.num = num
+        self.counter = num 
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.num == 0 or self.counter == 0:
+            raise StopIteration
+        
+        value = self.counter
+        self.counter -= 1
+        return value
+    
+# for b in BackCount(15):
+#     print(b)
+
+"""
+Question 3: Even Numbers
+
+Create an iterator that returns even numbers from 2 to 20.
+
+Output
+
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+"""
+
+
+class EvenNum:
+
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+        self.current = start 
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        
+        while self.current <= self.end:
+            if self.current % 2 == 0:
+                even = self.current
+                self.current += 1
+                return even
+
+            self.current += 1
+
+            if self.current == self.end or self.start == self.end:
+                raise StopIteration
+        
+
+
+# for e in EvenNum(2, 20):
+#     print(e)
+
+"""
+Input
+
+["Red", "Green", "Blue"]
+
+Output
+
+Red
+Green
+Blue
+Red
+Green
+Blue
+...
+
+This iterator never stops unless the user breaks out of the loop manually.
+"""
+
+class Circular:
+
+    def __init__(self, color):
+        self.color = color
+        self.current = 0
+        # self.end = len(self.color)
+    
+    def __iter__(self):
+        return self
+    
+    def __str__(self):
+        return f"Length of {self.color} is {len(self.color)}"
+
+    def __next__(self):
+        while True:
+            if self.current >= len(self.color):
+                self.current = 0
+                # print(f"index: {self.current}")
+
+            curr_item = self.color[self.current]
+            self.current += 1
+            return curr_item
+
+colors = Circular(["Red", "Blue", "Green"])
+
+print(colors)
+for c in colors:
+    print(c)
