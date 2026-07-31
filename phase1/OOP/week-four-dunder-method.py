@@ -368,6 +368,135 @@ class OddNumbers:
 
  
 
-for odd in OddNumbers(7, 19):
-    print(odd)
+# for odd in OddNumbers(7, 19):
+#     print(odd)
             
+""" 
+Question 5: Iterate Through a String
+
+Create your own iterator that works like a string.
+
+Example
+
+obj = MyString("Python")
+
+for ch in obj:
+    print(ch)
+"""
+
+class MyString:
+
+    def __init__(self, String):
+        self.String = String
+        self.counter = 0
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        
+        if len(self.String) > self.counter:
+            value = self.String[self.counter]
+            self.counter += 1
+            return value
+        else:
+            raise StopIteration
+
+obj = MyString("Python")
+
+# for s in obj:
+#     print(s)
+
+class Square:
+
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+        self.counter = 1
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.counter <= self.end:
+            sqr = self.counter**2
+            self.counter += 1
+            return sqr
+        else:
+            raise StopIteration
+
+sqr = Square(1,10)
+
+sqrs = [s for s in sqr]
+# print(sqrs)
+
+class Table:
+    def __init__(self, num):
+        self.num = num
+        self.counter = 1
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.counter <= 10:
+            value = self.counter * self.num
+            self.counter += 1
+            return value
+        else:
+            raise StopIteration
+
+T = Table(7)
+
+Multiplication_Table = [t for t in T]
+# print(Multiplication_Table)
+
+
+"""
+Question 9: Fibonacci Iterator
+
+Create an iterator for Fibonacci numbers.
+
+Example
+
+fib = Fibonacci(10)
+
+Output
+
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+"""
+
+class Fibonacci:
+    def __init__(self, num):
+        # self.start = 0
+        self.num = num
+        self.next = 1
+        self.prev = 0
+        self.counter = 0
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        
+        if self.counter > self.num:
+            raise StopIteration
+        
+        temp = self.prev
+        self.prev, self.next = self.next, self.next + self.prev
+        self.counter += 1
+        return temp 
+
+fib = Fibonacci(10)
+ 
+for f in fib:
+    print(f)
+
