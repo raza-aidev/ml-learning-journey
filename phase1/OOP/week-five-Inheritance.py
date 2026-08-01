@@ -87,3 +87,5 @@ c = Car(door=4, car_brand="Toyota", speed=120, model="Vertor")
 c.details_info()
 print(c.brake(30))
 print(c.brake(0))
+
+print(c.stop())
