@@ -80,7 +80,7 @@ class Truck(Vehicle):
         self.load_capacity = load_capacity
 
     def check_load_capacity(self):
-        return f"The truck's load capacity is {self.load_capacity}"
+        return f"The truck's load capacity is {self.load_capacity} Tons"
 
 
 c = Car(door=4, car_brand="Toyota", speed=120, model="Vertor")
@@ -89,3 +89,6 @@ print(c.brake(30))
 print(c.brake(0))
 
 print(c.stop())
+
+t = Truck("Ashok Layland", "Everest", 200, 2000)
+print(t.check_load_capacity())
