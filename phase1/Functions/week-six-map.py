@@ -62,3 +62,64 @@ temps_celsius = list(map(lambda temp: (temp*9/5)+32 , temps))
 
 print(temps_celsius)
 
+"""
+
+Question 18
+qty = [2,4,3]
+
+price = [100,200,50]
+
+Calculate total price of every item.
+
+Output
+
+[200,800,150]
+
+"""
+
+qty = [2,4,3]
+
+price = [100,200,50]
+
+def get_sum(*prices):
+    
+    result = 0
+    for price in prices:
+        result = price[0] + price[1]
+        return result
+
+consolidated = zip(qty, price)
+
+
+sum_of_prices = list(map(get_sum, consolidated))
+
+print(sum_of_prices)
+
+
+"""
+Question 19
+first = ["Raza","John"]
+
+last = ["Khan","Doe"]
+
+Output
+
+['Raza Khan','John Doe']
+"""
+
+first = ["Raza","John"]
+
+last = ["Khan","Doe"]
+
+def form_names(*names):
+    full_name = ""
+    for name in names:
+        full_name = name[0] + " " + name[1]
+        return full_name
+
+names = zip(first, last)
+
+full_names = list(map(form_names, names))
+
+print(full_names)
+
