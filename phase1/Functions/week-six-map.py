@@ -146,3 +146,126 @@ dict_1 = dict(zip(subjects, marks))
 
 
 print(dict_1)
+
+
+"""
+employees = [
+("John",50000),
+("Alex",60000),
+("Maria",45000)
+]
+
+Increase every salary by 10%.
+"""
+
+employees = [
+("John",50000),
+("Alex",60000),
+("Maria",45000)
+]
+
+def sal_increament(*sals):
+    new_sal = 0
+    for sal in sals:
+        new_sal = sal[1] + (0.1 * sal[1])
+        return (sal[0], new_sal)
+
+new_salary_details = list(map(sal_increament, employees))
+print(new_salary_details)
+
+"""
+Question 22 - Eligible Voters
+people = [
+("John",15),
+("Alex",22),
+("Maria",18),
+("Raza",25)
+]
+
+Return only eligible voters (age ≥ 18).
+"""
+people = [
+("John",15),
+("Alex",22),
+("Maria",18),
+("Raza",25)
+]
+
+def eligible_voters(*voters): # we receive (('Jhon', 15),) which is tuple of tuple, eache elemnt is send in a tuple only
+    for voter in voters: 
+        if voter[1] >= 18:
+            return voters
+
+new_voter_list = list(filter(eligible_voters, people))
+print(new_voter_list)
+
+
+"""
+marks = [91,82,76,64,50]
+
+Convert marks into grades.
+
+90+ → A
+80+ → B
+70+ → C
+60+ → D
+else → F
+
+Output
+
+['A','B','C','D','F']
+
+"""
+
+marks = [91,82,76,64,50]
+
+def get_grade(mark):
+    # print(mark)
+    if mark >= 90:
+        return "A"
+    elif 89 >= mark >= 80:
+        return "B"
+    elif 79 >= mark >= 70:
+        return "C"
+    elif 69 >= mark >= 60:
+        return "D"
+    else:
+        return "E"
+
+grades = list(map(get_grade, marks))
+
+print(grades)
+
+"""
+Question 24 - Shopping Cart
+products = [
+("Laptop",50000,2),
+("Mouse",500,3),
+("Keyboard",1000,2)
+]
+
+Calculate total cost of each product.
+
+Expected
+
+[
+("Laptop",100000),
+("Mouse",1500),
+("Keyboard",2000)
+]
+"""
+
+products = [
+("Laptop",50000,2),
+("Mouse",500,3),
+("Keyboard",1000,2)
+]
+
+def total_cost(*items):
+    net_amount = 0
+    for product, cost, quantity in items:
+        net_amount = cost * quantity
+        return (product, net_amount)
+
+cost_of_each_product = list(map(total_cost, products))
+print(cost_of_each_product)
