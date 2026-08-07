@@ -123,3 +123,26 @@ full_names = list(map(form_names, names))
 
 print(full_names)
 
+"""
+Question 20
+subjects = ["Math","Science","English"]
+
+marks = [90,85,95]
+
+Output
+
+{
+'Math':90,
+'Science':85,
+'English':95
+}
+"""
+
+subjects = ["Math","Science","English"]
+
+marks = [90,85,95]
+
+dict_1 = dict(zip(subjects, marks))
+
+
+print(dict_1)
