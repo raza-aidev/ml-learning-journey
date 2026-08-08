@@ -128,5 +128,4 @@ def get_mature_people(name_age):
 
 
 mature_people = list(filter(get_mature_people, name_age))
-
 print(mature_people)
