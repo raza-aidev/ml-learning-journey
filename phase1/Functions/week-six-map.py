@@ -269,3 +269,39 @@ def total_cost(*items):
 
 cost_of_each_product = list(map(total_cost, products))
 print(cost_of_each_product)
+
+
+"""
+Question 25 - Highest Scoring Student
+names = ["John","Alex","Maria","Raza"]
+
+marks = [78,92,85,88]
+
+Using zip(), determine the student with the highest marks.
+
+Expected
+
+Alex 92
+"""
+names = ["Nisa","John","Alex","Maria","Raza", "Ravi"]
+
+marks = [99,78,92,85,88,56]
+
+score_by_name = list(zip(names, marks))
+
+# print(score_by_name)
+
+max_score = score_by_name[0] #('Jhon', 78)
+max_value = max_score[1]
+for i in range(1, len(score_by_name)):
+    # print(score_by_name[i][1])
+    if max_value >= score_by_name[i][1]:
+        continue
+    elif max_value < score_by_name[i][1]:
+        max_score = score_by_name[i]
+        max_value = score_by_name[i][1]
+    
+print(max_score)
+
+# for value in max_score:
+#     print(value, end=",")
