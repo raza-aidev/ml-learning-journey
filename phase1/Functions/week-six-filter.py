@@ -82,3 +82,51 @@ def check_valid_email(*emails):
             return email
 
 print(list(filter(check_valid_email, emails)))
+
+
+"""
+Challenge 1
+
+Given
+
+numbers = range(1,51)
+
+Return the square of all even numbers divisible by 4.
+"""
+
+numbers = range(1,51)
+
+even_numbers = list(filter(lambda n: n%4 == 0,list(filter(lambda num: num%2 == 0, numbers))))
+print(even_numbers)
+
+
+"""
+Challenge 2
+
+Given
+
+names = ["john","alex","maria","robert"]
+
+ages = [15,20,17,25]
+
+Return
+
+[
+("ALEX",20),
+("ROBERT",25)
+]
+"""
+
+names = ["john","alex","maria","robert"]
+
+ages = [15,20,17,25]
+name_age = list(zip(names, ages))
+
+def get_mature_people(name_age):
+    if name_age[1] >= 18:
+        return name_age
+
+
+mature_people = list(filter(get_mature_people, name_age))
+
+print(mature_people)
