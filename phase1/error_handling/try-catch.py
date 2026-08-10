@@ -186,6 +186,47 @@ def divide():
     finally:
         print("Process completed...")
 
-divide()
+# divide()
+
+
+print("----Custom class-------")
+
+class InvalidAgeError(Exception):
+    pass
+
+def is_eligible(age):
+    
+    try:
+        if age < 18:
+            raise InvalidAgeError
+    except InvalidAgeError as er:
+        print("Exception Occured: Please enter Valid Age.")
+    else:
+        print(f"Entered Age is: {age}")
+    finally:
+        print("Process completed...")
+
+# is_eligible(21)
+
+
+"""
+
+Question 6 — except Exception as e
+
+Write a program that intentionally performs an operation that could fail.
+
+Catch the exception using:
+
+except Exception as e:
+
+Print:
+
+Exception occurred: <actual exception message>
+
+For example:
+
+Exception occurred: division by zero
+
+"""
 
 
