@@ -230,3 +230,15 @@ Exception occurred: division by zero
 """
 
 
+def add(a, b):
+    try:
+        result = a + b
+    except Exception as e:
+        print(f"Exception occured: {e}")
+    else:
+        return result
+    finally:
+        print("Process Completed")
+
+
+add(12,"12")
