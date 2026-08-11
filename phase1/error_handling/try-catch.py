@@ -241,4 +241,60 @@ def add(a, b):
         print("Process Completed")
 
 
-add(12,"12")
+# add(12,"12")
+
+"""
+Question 2 — Invalid Integer
+
+Write a program that asks the user to enter an integer.
+
+If the user enters:
+
+abc
+
+the program should display:
+
+Invalid input. Please enter a number.
+
+Hint: Which exception does int("abc") generate?
+"""
+
+def get_data():
+    try:
+        num = int(input("Enter the number: "))
+    except ValueError as er:
+        print(f"Exception has occurred: {er}")
+    else:
+        print(f"The entered number {num}")
+    finally:
+        print("Process has been completed.")
+
+# get_data()
+
+"""
+Question 3 — List Index
+
+Given:
+
+numbers = [10, 20, 30, 40, 50]
+
+Ask the user for an index and print the corresponding element.
+
+Handle an invalid index.
+
+Example:
+
+Enter index: 10
+
+Index does not exist.
+"""
+
+numbers = [10, 20, 30, 40, 50]
+
+def get_numbers(index):
+    try:
+        print(numbers[index])
+    except IndexError as er:
+        print(f"Exception occurred: {er}")
+
+# get_numbers(12)
