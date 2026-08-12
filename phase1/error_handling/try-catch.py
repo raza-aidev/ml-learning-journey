@@ -298,3 +298,40 @@ def get_numbers(index):
         print(f"Exception occurred: {er}")
 
 # get_numbers(12)
+
+"""
+Question 4 — Dictionary Key
+
+Given:
+
+student = {
+    "name": "Raza",
+    "age": 25,
+    "city": "Pune"
+}
+
+Ask the user for a key.
+
+Handle the situation where the key doesn't exist.
+
+Example:
+
+Enter key: salary
+
+Key not found.
+"""
+
+
+
+try:
+    student = {
+        "name" : "Raza",
+        "Age" : 33,
+        "city" : "Pune"
+    }
+
+    key = input("Enter the Key: ")
+    print(student[key])
+
+except KeyError as er:
+    print(f"Exception occurred: KeyError: Key {er} not found in {student}")
