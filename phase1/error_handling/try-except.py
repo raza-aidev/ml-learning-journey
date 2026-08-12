@@ -372,19 +372,121 @@ Cannot divide by zero.
 
 """
 
+def division2():
+    try:
+        a = int(input("Enter value of a: "))
+        b = int(input("Enter value of b: "))
+
+        result = a/b
+
+    except ValueError as er:
+        print("Please enter numaric value.")
+
+    except ZeroDivisionError as er:
+        print(f"Value of b is {b}. Please enter valid value.")
+
+    else:
+        print(f"Result: {result}")
+    finally:
+        print("Process Completed.")
+
+# division2()
+
+
+"""
+Question 6 — except Exception as e
+
+Write a program that intentionally performs an operation that could fail.
+
+Catch the exception using:
+
+except Exception as e:
+
+Print:
+
+Exception occurred: <actual exception message>
+
+For example:
+
+Exception occurred: division by zero
+"""
+
+
+
+
+"""
+Question 7 — Specific vs Generic Exception
+
+Create a program that has:
+
 try:
-    a = int(input("Enter value of a: "))
-    b = int(input("Enter value of b: "))
+    ...
+except ValueError:
+    ...
+except ZeroDivisionError:
+    ...
+except Exception as e:
+    ...
 
-    result = a/b
+Create different scenarios that trigger each exception.
 
-except ValueError as er:
-    print("Please enter numaric value.")
+Think about:
 
-except ZeroDivisionError as er:
-    print(f"Value of b is {b}. Please enter valid value.")
+Why should you put:
 
-else:
-    print(f"Result: {result}")
-finally:
-    print("Process Completed.")
+except Exception as e:
+
+after the specific exceptions?
+"""
+
+def calculate():
+    try:
+        num1 = int(input("Enter 1st number: "))
+        num2 = int(input("Enter 2nd Number: "))
+
+        # count += 1
+
+        result = num1 / num2
+        prit("Hello")
+    except ZeroDivisionError as er:
+        print(f"Exception occurred: {er}")
+    
+    except ValueError as er:
+        print(f"Exception Occurred: {er}")
+    
+    except Exception as e:
+        print(f"Exception occured (Generic exception): {e}")
+    else:
+        print(f"{result}")
+    finally:
+        print("Process completed..")
+
+calculate()
+
+"""
+Question 8 — Successful Calculation
+
+Write a program that:
+
+Takes two numbers.
+Divides them.
+Handles ValueError and ZeroDivisionError.
+Uses else to print the result only if no exception occurred.
+
+Expected:
+
+Enter number 1: 20
+Enter number 2: 5
+
+Division successful.
+Result: 4.0
+
+But:
+
+Enter number 1: 20
+Enter number 2: 0
+
+Cannot divide by zero.
+
+The else block should not execute in the second case.
+"""
