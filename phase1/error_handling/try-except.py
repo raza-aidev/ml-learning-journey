@@ -461,7 +461,7 @@ def calculate():
     finally:
         print("Process completed..")
 
-calculate()
+# calculate()
 
 """
 Question 8 — Successful Calculation
@@ -490,3 +490,43 @@ Cannot divide by zero.
 
 The else block should not execute in the second case.
 """
+
+
+"""
+Question 12 — Age Validation
+
+Write:
+
+def check_age(age):
+    ...
+
+If age is less than 18, raise:
+
+ValueError("Age must be 18 or above")
+
+Otherwise print:
+
+Eligible
+
+Test:
+
+check_age(15)
+
+Expected:
+
+ValueError: Age must be 18 or above
+"""
+
+def check_age():
+    try:
+        age = int(input("Enter the age: "))
+        if age >= 18:
+            print("Your are eligible for vote!")
+        else:
+            raise ValueError("Enter the age 18 or above 18")
+    except ValueError as er:
+        print(f"Exception occurred: {er}")
+    finally:
+        print("Process Completed!")
+
+check_age()
