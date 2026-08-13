@@ -1,10 +1,23 @@
-import logging 
+""" this is the first set of logging method """
 
-logging.basicConfig(level=logging.INFO)
-                    # (format='%(asctime)s - %(levelname)s - %(levelno)d - %(name)s' 
-                    # filename="test-log.log", 
-                    # filemode="a")
+# import logging 
 
-logging.warning("This is the warning!")
-logging.error("This is the error")
-logging.critical("This is the critical message!")
+# # logging.basicConfig(level=logging.INFO)
+# #                     # (format='%(asctime)s - %(levelname)s - %(levelno)d - %(name)s' 
+# #                     # filename="test-log.log", 
+# #                     # filemode="a")
+
+# # logging.warning("This is the warning!")
+# # logging.error("This is the error")
+# # logging.critical("This is the critical message!")
+
+import logging
+
+logging.basicConfig(level = logging.INFO, 
+                    format = "%(asctime)s - %(levelno)d - %(name)s", 
+                    filename = "test-log.log", 
+                    filemode = "a")
+
+logger = logging.getLogger("python-logging")
+logger.setLevel(logging.INFO)
+logger.info("This is the message for info")
