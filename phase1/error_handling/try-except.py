@@ -529,4 +529,59 @@ def check_age():
     finally:
         print("Process Completed!")
 
-check_age()
+# check_age()
+
+"""
+Question 13 — Salary Validation
+
+Create:
+
+def set_salary(salary):
+    ...
+
+Rules:
+
+Salary cannot be negative.
+Salary cannot be zero.
+Salary must be numeric.
+
+If salary is invalid, raise an appropriate exception.
+
+Example:
+
+set_salary(-5000)
+
+should raise something like:
+
+ValueError: Salary cannot be negative
+
+"""
+
+
+def set_salary(salary):
+    if type(salary) != int:
+        raise ValueError(f"Salary must be Numaric.")
+    elif salary > 0:
+        return f"You have received salary: {salary}"
+    elif salary < 0:
+        raise ValueError(f"Salary can't by negative: {salary}")
+    elif salary == 0:
+        raise ValueError(f"Salary can't be Zero.") 
+    else:
+        raise SyntaxError(f"Enter Valid salary!")
+
+try:
+    salary = int(input("Enter the salary: "))
+    message = set_salary(salary)
+except (ValueError, SyntaxError, Exception) as er:
+    print(f"Error: {er}")
+else:
+    print(message)
+finally:
+    print("Salary setting attempted.")
+
+
+# a = 10
+# b = 12.4
+# print(type(a))
+# print(type(b))
