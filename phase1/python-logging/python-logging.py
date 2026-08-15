@@ -50,31 +50,98 @@
 # logger.error("Adding error message")
 # logger.critical("Adding Critical")
 
+# import logging
+
+# #Create logger
+# logger = logging.getLogger("python-logging")
+# logger.setLevel(logging.DEBUG)
+
+
+# # create console handler
+# console_log = logging.StreamHandler()
+# console_log.setLevel(logging.DEBUG)
+
+# #add handler
+# logger.addHandler(console_log)
+
+# logger.debug("Console_Logs - This is debug message")
+# logger.info("Console_logs - This is info logs")
+# logger.warning("COnsole_logs - This is warning logs")
+
+# #Create file handler
+# file_handler = logging.FileHandler("test-log.log")
+# file_handler.setLevel(logging.DEBUG)
+
+# #adding handler
+# logger.addHandler(file_handler)
+
+# # logger.debug("Adding Debug message to logs")
+# # logger.info("Adding info to logs")
+# # logger.warning("Adding wrning message to logs")
+
+
+# import logging
+
+# # creating logger - L
+# logger = logging.getLogger("python-logging")
+# logger.setLevel(logging.DEBUG)
+
+# # Creating handler - H
+# file_handler = logging.FileHandler("test-log.log")
+# file_handler.setLevel(logging.DEBUG)
+
+# # Creating console handler
+# console = logging.StreamHandler()
+# console.setLevel(logging.DEBUG)
+
+# #Adding handler in logger
+# logger.addHandler(file_handler)
+# logger.addHandler(console)
+
+# #creating formatter - F
+# formater = logging.Formatter(
+#     '%(asctime)s : %(levelname)s | %(name)s | %(message)s'
+# )
+# # formater.setLevel(logging.DEBUG)
+
+# #Adding formatter to handler
+# file_handler.setFormatter(formater)
+
+# logger.debug("This message is to write debug.")
+
 import logging
 
-#Create logger
-logger = logging.getLogger("python-logging")
-logger.setLevel(logging.DEBUG)
+def set_logger(name, logger_level = logging.ERROR, file_name = "setup_logs.log"):
 
+    #Creating logger
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
 
-# create console handler
-console_log = logging.StreamHandler()
-console_log.setLevel(logging.DEBUG)
+    #creating file handler
+    filehandler = logging.FileHandler(file_name)
+    filehandler.setLevel(logging.DEBUG)
 
-#add handler
-logger.addHandler(console_log)
+    #creating console handler
+    console = logging.StreamHandler()
+    console.setLevel(logger_level)
 
-logger.debug("Console_Logs - This is debug message")
-logger.info("Console_logs - This is info logs")
-logger.warning("COnsole_logs - This is warning logs")
+    #creating formatter
+    formatter = logging.Formatter(
+        '%(asctime)s - %(levelname)s: %(name)s | %(message)s'
+    ) 
 
-#Create file handler
-file_handler = logging.FileHandler("test-log.log")
-file_handler.setLevel(logging.DEBUG)
+    #Adding formatter to handler
+    filehandler.setFormatter(formatter)
+    console.setFormatter(formatter)
 
-#adding handler
-logger.addHandler(file_handler)
+    #Adding handler to logger
+    logger.addHandler(filehandler)
+    logger.addHandler(console)
 
-logger.debug("Adding Debug message to logs")
-logger.info("Adding info to logs")
-logger.warning("Adding wrning message to logs")
+    return logger
+
+logger = set_logger("python-logging")
+
+logger.debug("This message to debug.")
+logger.info("This message to add information")
+logger.error("This is the error message")
