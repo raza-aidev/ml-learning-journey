@@ -30,23 +30,51 @@
 # logger.warning("This is the Warning")
 # logger.critical("This is critile message")
 
+# import logging
+
+# #Create Logger
+# logger = logging.getLogger("python-logging")
+# logger.setLevel(logging.DEBUG)
+
+# #Create Handler
+# file_handler = logging.FileHandler("test-log.log")
+# file_handler.setLevel(logging.DEBUG)
+
+# #Add Handler
+# logger.addHandler(file_handler)
+
+# #Write to file
+# logger.debug("Adding Debug message")
+# logger.info("Adding logger info")
+# logger.warning("Adding warning message")
+# logger.error("Adding error message")
+# logger.critical("Adding Critical")
+
 import logging
 
-#Create Logger
+#Create logger
 logger = logging.getLogger("python-logging")
 logger.setLevel(logging.DEBUG)
 
-#Create Handler
+
+# create console handler
+console_log = logging.StreamHandler()
+console_log.setLevel(logging.DEBUG)
+
+#add handler
+logger.addHandler(console_log)
+
+logger.debug("Console_Logs - This is debug message")
+logger.info("Console_logs - This is info logs")
+logger.warning("COnsole_logs - This is warning logs")
+
+#Create file handler
 file_handler = logging.FileHandler("test-log.log")
 file_handler.setLevel(logging.DEBUG)
 
-#Add Handler
+#adding handler
 logger.addHandler(file_handler)
 
-#Write to file
-logger.debug("Adding Debug message")
-logger.info("Adding logger info")
-logger.warning("Adding warning message")
-logger.error("Adding error message")
-logger.critical("Adding Critical")
-
+logger.debug("Adding Debug message to logs")
+logger.info("Adding info to logs")
+logger.warning("Adding wrning message to logs")
