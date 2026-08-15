@@ -571,8 +571,9 @@ def set_salary(salary):
         raise SyntaxError(f"Enter Valid salary!")
 
 try:
-    salary = int(input("Enter the salary: "))
-    message = set_salary(salary)
+    # salary = int(input("Enter the salary: "))
+    # message = set_salary(salary)
+    message = ""
 except (ValueError, SyntaxError, Exception) as er:
     print(f"Error: {er}")
 else:
@@ -585,3 +586,64 @@ finally:
 # b = 12.4
 # print(type(a))
 # print(type(b))
+
+
+"""
+Question 14 — Password Validation
+
+Create:
+
+def validate_password(password):
+    ...
+
+Rules:
+
+Minimum 8 characters.
+Must contain at least one digit.
+Must contain at least one uppercase letter.
+
+If validation fails, use raise.
+
+Example:
+
+validate_password("hello")
+
+should raise an exception.
+
+Challenge: Decide whether ValueError or another built-in exception is most appropriate.
+
+"""
+password = "Password"
+print(password.isalnum())
+
+# class LengthError(Exception):
+#     pass
+
+# class NotAlphaNumeric(Exception):
+#     pass
+
+# class NoUpperCaseError(Exception):
+#     pass
+
+# def validate_password(password):
+#     if len(password) >= 8:
+#         if password.isalnum():
+#             for i in range(len(password)):
+#                 if password[i].isupper():
+#                     break
+#             else:
+#                 raise NoUpperCaseError("Password must contain at least one uppercase letter.")
+#         else:
+#             raise NotAlphaNumeric("Password must contain at least one digit")
+#     else:
+#         raise LengthError("Password must be greater than 8 character.")
+
+# try:
+#     password = input("Enter the password: ")
+#     validate_password(password)
+# except (LengthError, NotAlphaNumeric, NoUpperCaseError) as er:
+#     print(f"Error occurred: {er}")
+# else:
+#     print("Welcome!!!")
+# finally:
+#     print("Process Finished!")
