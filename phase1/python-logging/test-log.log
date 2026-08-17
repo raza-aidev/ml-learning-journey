@@ -32,3 +32,15 @@
  15:08:2026 12:59:02 | python-logging:29 | INFO : This is the message of information 
  15:08:2026 12:59:02 | python-logging:30 | WARNING : This is the Warning
  15:08:2026 12:59:02 | python-logging:31 | CRITICAL : This is critile message
+Adding messages
+Adding Debug message
+Adding logger info
+Adding warning message
+Adding error message
+Adding Critical
+Adding Debug message to logs
+Adding info to logs
+Adding wrning message to logs
+2026-08-15 22:28:45,543 : DEBUG - python-logging - This message is to write debug.
+2026-08-15 22:29:07,255 : DEBUG | python-logging | This message is to write debug.
+2026-08-15 22:30:41,135 : DEBUG | python-logging | This message is to write debug.
