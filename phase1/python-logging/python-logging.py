@@ -145,3 +145,4 @@ logger = set_logger("python-logging")
 logger.debug("This message to debug.")
 logger.info("This message to add information")
 logger.error("This is the error message")
+
