@@ -1,0 +1,3 @@
+2026-08-15 22:59:36,013 - DEBUG: python-logging | This message to debug.
+2026-08-15 22:59:36,013 - INFO: python-logging | This message to add information
+2026-08-15 22:59:36,013 - ERROR: python-logging | This is the error message
