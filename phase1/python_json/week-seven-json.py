@@ -33,30 +33,30 @@ import logging
 
 #send data to API
 
-python_data = {
-    "action":"create-user",
-    "user-details":{
-        "user-name":"Ravi Shastri",
-        "age":"67",
-        "profession":"Cricket Coach",
-        "centuries": 101
-    },
-    "stats": [12, 32, 56]
-}
+# python_data = {
+#     "action":"create-user",
+#     "user-details":{
+#         "user-name":"Ravi Shastri",
+#         "age":"67",
+#         "profession":"Cricket Coach",
+#         "centuries": 101
+#     },
+#     "stats": [12, 32, 56]
+# }
 
-#create logger
-logger = logging.getLogger("week-seven-json")
-logger.setLevel(logging.DEBUG)
+# #create logger
+# logger = logging.getLogger("week-seven-json")
+# logger.setLevel(logging.DEBUG)
 
-#create handler
-console = logging.StreamHandler()
-console.setLevel(logging.DEBUG)
+# #create handler
+# console = logging.StreamHandler()
+# console.setLevel(logging.DEBUG)
 
-#add handler to logger
-logger.addHandler(console)
+# #add handler to logger
+# logger.addHandler(console)
 
-#Convert python data to JSON (for API)
-json_data=json.dumps(python_data)
-logger.debug(f"the JSON data: {json_data}")
+# #Convert python data to JSON (for API)
+# json_data=json.dumps(python_data)
+# logger.debug(f"the JSON data: {json_data}")
 
-logger.debug(f"Type of Data: {type(json_data)}")
+# logger.debug(f"Type of Data: {type(json_data)}")
