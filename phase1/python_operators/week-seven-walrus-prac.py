@@ -43,23 +43,51 @@ Expected behavior:
 Enter password: python123
 Password is valid
 """
+# import logging
+
+# #Create logger
+# logger = logging.getLogger("week-seven-walrus-prac")
+# logger.setLevel(logging.DEBUG)
+
+# #Create console handler
+# console = logging.StreamHandler()
+# console.setLevel(logging.DEBUG)
+
+# #Add console to logger
+# logger.addHandler(console)
+
+
+# if len(password:=input("Enter the password:")) < 8:
+#     logger.debug(f"Password should have atleast 8 charactors")
+# else:
+#     logger.debug("Welcome!")
+
+
+"""
+Problem 3 — Sum validation
+
+Given:
+
+numbers = [10, 20, 30, 40, 50]
+
+Use the walrus operator to calculate the sum and print:
+
+Sum is greater than 100: 150
+
+if the sum is greater than 100.
+"""
+
 import logging
 
-#Create logger
 logger = logging.getLogger("week-seven-walrus-prac")
 logger.setLevel(logging.DEBUG)
 
-#Create console handler
 console = logging.StreamHandler()
 console.setLevel(logging.DEBUG)
 
-#Add console to logger
 logger.addHandler(console)
 
+numbers = [10, 20, 30 ,40, 50]
 
-if len(password:=input("Enter the password:")) < 8:
-    logger.debug(f"Password should have atleast 8 charactors")
-else:
-    logger.debug("Welcome!")
-
-       
+if (total:=sum(numbers)) > 100:
+    logger.info(f"The Sum is greater than 100: {total}")
