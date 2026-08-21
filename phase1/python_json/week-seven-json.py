@@ -60,3 +60,30 @@ import logging
 # logger.debug(f"the JSON data: {json_data}")
 
 # logger.debug(f"Type of Data: {type(json_data)}")
+
+
+import json
+import logging 
+
+logger = logging.getLogger("week-seven-json")
+logger.setLevel(logging.DEBUG)
+
+console = logging.StreamHandler()
+console.setLevel(logging.DEBUG)
+
+logger.addHandler(console)
+
+python_string = {
+    "Address" : {
+        "Area" : "Mulund",
+        "Pin" : 400452,
+        "City" : "Navi Mumbai",
+        "Apt Name" : "Galaxy Euro"
+    },
+    "Contact" : 9863537121,
+    "Name" : "Radhe Ravi",
+    "Email" : "radhe.ravikishan@gmail.com"
+}
+
+json_string = json.dumps(python_string, indent = 2)
+logger.debug(json_string)
