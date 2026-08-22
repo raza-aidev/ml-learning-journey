@@ -88,20 +88,81 @@ import logging
 # json_string = json.dumps(python_string, indent = 2)
 # logger.debug(json_string)
 
+# import json
+# import logging
+
+
+# logger = logging.getLogger("week-seven-json")
+# logger.setLevel(logging.DEBUG)
+
+# console = logging.StreamHandler()
+# logger.setLevel(logging.DEBUG)
+
+# #add handler to logger
+# logger.addHandler(console)
+
+# with open('./data.json', 'r') as file:
+#     data = json.load(file)
+
+# logger.info(data)
+
+# Example of dump in json file
+
+# import json
+# import logging 
+
+# logger = logging.getLogger("week-seven-json")
+# logger.setLevel(logging.DEBUG)
+
+# console = logging.StreamHandler()
+# console.setLevel(logging.DEBUG)
+
+# logger.addHandler(console)
+
+
+# shipment_details = {
+#     "State": "Gujarat",
+#     "City": "Jodhpur",
+#     "Area": "Raja Mahal",
+#     "Pin": 562262,
+#     "House Number": 67,
+#     "Contact Details" :{
+#         "Email ID": "Tukaram.mathur@gmail.com",
+#         "Phone Number": "+91 7282727272",
+#         "Alternet Number": "+91 8337873833"
+#     },
+#     "shipment_mode": "Train",
+#     "Date of Booking": "12/05/2026",
+#     "Estimated Date of Arrival": "25/05/2026",
+#     "Package Number": "REO9878123"
+# }
+
+# with open('data.json', 'w') as data:
+#     data = json.dump(shipment_details, data, indent = 2)
+
 import json
 import logging
-
 
 logger = logging.getLogger("week-seven-json")
 logger.setLevel(logging.DEBUG)
 
 console = logging.StreamHandler()
-logger.setLevel(logging.DEBUG)
+console.setLevel(logging.DEBUG)
 
-#add handler to logger
 logger.addHandler(console)
 
-with open('./data.json', 'r') as file:
-    data = json.load(file)
+with open('data.json', 'r') as file:
+    json_data = json.load(file)
 
-logger.info(data)
+# logger.info(json_data)
+
+json_data["House Number"] = 68
+json_data["Shipment mode"] = "Airline"
+json_data["Contact Details"]["Alternet Number"] = "+91 8967452300"
+
+# logger.info(json_data)
+
+with open("data.json", 'w') as file:
+    json.dump(json_data, file, indent= 4)
+    # logger.info(data)
+
