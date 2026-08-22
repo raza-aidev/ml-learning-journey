@@ -140,8 +140,33 @@ import logging
 # with open('data.json', 'w') as data:
 #     data = json.dump(shipment_details, data, indent = 2)
 
-import json
-import logging
+# import json
+# import logging
+
+# logger = logging.getLogger("week-seven-json")
+# logger.setLevel(logging.DEBUG)
+
+# console = logging.StreamHandler()
+# console.setLevel(logging.DEBUG)
+
+# logger.addHandler(console)
+
+# with open('data.json', 'r') as file:
+#     json_data = json.load(file)
+
+# # logger.info(json_data)
+
+# json_data["House Number"] = 68
+# json_data["Shipment mode"] = "Airline"
+# json_data["Contact Details"]["Alternet Number"] = "+91 8967452300"
+
+# # logger.info(json_data)
+
+# with open("data.json", 'w') as file:
+#     json.dump(json_data, file, indent= 4)
+#     # logger.info(data)
+
+import json, logging
 
 logger = logging.getLogger("week-seven-json")
 logger.setLevel(logging.DEBUG)
@@ -151,18 +176,31 @@ console.setLevel(logging.DEBUG)
 
 logger.addHandler(console)
 
-with open('data.json', 'r') as file:
-    json_data = json.load(file)
+"""
+Question to get the total price of items added in cart
+and find the expensive item 
+"""
+json_str = '''
+[
+    {"id": 1, "product": "Laptop", "price": 1000},
+    {"id": 2, "product": "Mouse", "price": 25},
+    {"id": 3, "product": "Keyboard", "price": 75}
+]
+'''
 
-# logger.info(json_data)
+python_data = json.loads(json_str)
+# logger.info(python_data)
+total_price = sum([product["price"] for product in python_data if product["price"] > 0])
 
-json_data["House Number"] = 68
-json_data["Shipment mode"] = "Airline"
-json_data["Contact Details"]["Alternet Number"] = "+91 8967452300"
 
-# logger.info(json_data)
+logger.info(f"Total Price: {total_price}")
 
-with open("data.json", 'w') as file:
-    json.dump(json_data, file, indent= 4)
-    # logger.info(data)
+# expensive = [price for product in python_data for price["price"] in ]
+expensive_item = python_data[0]
+max_price = expensive_item["price"]
 
+for i in range(len(python_data)):
+    if python_data[i]["price"] > max_price:
+        expensive_item = python_data[i]
+
+logger.info(f'Expensive product: {expensive_item["product"]}') 
