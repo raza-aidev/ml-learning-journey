@@ -180,27 +180,68 @@ logger.addHandler(console)
 Question to get the total price of items added in cart
 and find the expensive item 
 """
-json_str = '''
-[
-    {"id": 1, "product": "Laptop", "price": 1000},
-    {"id": 2, "product": "Mouse", "price": 25},
-    {"id": 3, "product": "Keyboard", "price": 75}
-]
-'''
+# json_str = '''
+# [
+#     {"id": 1, "product": "Laptop", "price": 1000},
+#     {"id": 2, "product": "Mouse", "price": 25},
+#     {"id": 3, "product": "Keyboard", "price": 75}
+# ]
+# '''
 
-python_data = json.loads(json_str)
-# logger.info(python_data)
-total_price = sum([product["price"] for product in python_data if product["price"] > 0])
+# python_data = json.loads(json_str)
+# # logger.info(python_data)
+# total_price = sum([product["price"] for product in python_data if product["price"] > 0])
 
 
-logger.info(f"Total Price: {total_price}")
+# logger.info(f"Total Price: {total_price}")
 
-# expensive = [price for product in python_data for price["price"] in ]
-expensive_item = python_data[0]
-max_price = expensive_item["price"]
+# # expensive = [price for product in python_data for price["price"] in ]
+# expensive_item = python_data[0]
+# max_price = expensive_item["price"]
 
-for i in range(len(python_data)):
-    if python_data[i]["price"] > max_price:
-        expensive_item = python_data[i]
+# for i in range(len(python_data)):
+#     if python_data[i]["price"] > max_price:
+#         expensive_item = python_data[i]
 
-logger.info(f'Expensive product: {expensive_item["product"]}') 
+# logger.info(f'Expensive product: {expensive_item["product"]}') 
+
+
+
+"""
+Write a function that takes a JSON string and returns the value of a specific key.
+
+json_str = '{"name": "Alice", "age": 30}'
+result = get_value(json_str, "name")  # Should return "Alice"
+"""
+import json, logging
+
+logger = logging.getLogger("week-seven-json")
+logger.setLevel(logging.DEBUG)
+
+console = logging.StreamHandler()
+console.setLevel(logging.DEBUG)
+
+logger.addHandler(console)
+
+def get_value(key):
+    try:
+        json_str = '{"name": "Alice", "age": 30}'
+        python_dict = json.loads(json_str)
+    except JSON.JSONDecodeError as er:
+        logger.error(f"Error Occured: {er}")
+    except KeyError as er:
+        logger.error(f"Error Occured: {er}")
+    except Exception as er:
+        logger.error(f"Unexpected Error occured! - {er}")
+    else:
+        return python_dict[key]
+
+try:
+    value = get_value("amse")
+    logger.info(f"Fetched Value is: {value}")
+except KeyError as er:
+    logger.error(f"Error Occured: {er}")
+except Exception as er:
+    logger.error(f"Unexpected error occured: {er}")
+
+print("Abc")
