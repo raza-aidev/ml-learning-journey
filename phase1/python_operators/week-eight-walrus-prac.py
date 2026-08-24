@@ -33,8 +33,8 @@ Enter number: -1
 Program ended
 """
 
-while (num := int(input("Enter Number: "))) != -1:
-    logger.info(f"The entered number is: {num}")
+# while (num := int(input("Enter Number: "))) != -1:
+#     logger.info(f"The entered number is: {num}")
 
 
 """
@@ -50,3 +50,21 @@ Expected:
 
 elephant
 """
+
+words = ["cat", "dog", "elephant", "fox", "tiger"]
+
+# for index, value in enumerate(words):
+#     larg_word = words[0]
+#     if value := 
+
+# for i in range(len(words)):
+#     larg_word = words[0]
+#     if  
+
+# larg_word = [word for word in words if len(word) >= 5]
+# print(larg_word)
+
+for i in range(len(words)):
+    if len((word := words[i])) > 5:
+        print(word)
+        break
