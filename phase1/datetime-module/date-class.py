@@ -65,3 +65,15 @@ def get_age(birth_year, birth_month, birth_day):
 
 
 logger.info(f"My age is: {get_age(1998, 9, 25)}")
+
+
+from datetime import datetime, date, time, timezone, timedelta
+
+d1 = date(2025, 12, 12)
+logger.info(d1)
+
+logger.info(d1.year)
+logger.info(d1.month)
+logger.info(d1.year)
+logger.info(d1.weekday())
+logger.info(d1.isoweekday())
