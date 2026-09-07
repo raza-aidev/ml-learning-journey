@@ -24,4 +24,5 @@ colors = ["red", "Yellow", "Green"]
 
 list3 = list(islice(cycle(colors), 5))
 
+
 logger.info(f"use of cycle: {list3}")
