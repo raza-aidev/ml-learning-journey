@@ -1,0 +1,17 @@
+{
+    "State": "Gujarat",
+    "City": "Jodhpur",
+    "Area": "Raja Mahal",
+    "Pin": 562262,
+    "House Number": 68,
+    "Contact Details": {
+        "Email ID": "Tukaram.mathur@gmail.com",
+        "Phone Number": "+91 7282727272",
+        "Alternet Number": "+91 8967452300"
+    },
+    "shipment_mode": "Train",
+    "Date of Booking": "12/05/2026",
+    "Estimated Date of Arrival": "25/05/2026",
+    "Package Number": "REO9878123",
+    "Shipment mode": "Airline"
+}

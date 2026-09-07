@@ -1,0 +1,12 @@
+2026-08-16 00:39:49,893 - server : server.py | Starting server on port: {port}
+2026-08-16 00:39:49,893 - server : server.py | Server has started.
+2026-08-16 00:39:49,893 - database : database.py | Connecting to Host: 8080
+2026-08-16 00:39:49,893 - database : database.py | Database is connected!
+2026-08-16 00:41:48,412 - server : server.py | Starting server on port: {port}
+2026-08-16 00:41:48,413 - server : server.py | Server has started.
+2026-08-16 00:41:48,414 - database : database.py | Connecting to Host: localhost
+2026-08-16 00:41:48,414 - database : database.py | Database is connected!
+2026-08-16 00:42:11,994 - server : server.py | Starting server on port: 8080
+2026-08-16 00:42:11,994 - server : server.py | Server has started.
+2026-08-16 00:42:11,994 - database : database.py | Connecting to Host: localhost
+2026-08-16 00:42:11,994 - database : database.py | Database is connected!
