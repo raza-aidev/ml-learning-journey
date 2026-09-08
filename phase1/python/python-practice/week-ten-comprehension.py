@@ -25,3 +25,18 @@ logger.info(word_lens)
 list4 = [-1, -2, -3, -0.5, 1, 3, 4, -2, 0]
 neg_nums = [num if num > 0 else 0 for num in list4 ]
 logger.info(neg_nums)
+
+#even and odd using else if 
+
+list5 = [12, 13, 14, 15, 16 ,17 ,18]
+
+even_nums = ["Even" if num%2 == 0 else "Odd" for num in list5]
+logger.info(even_nums)
+
+# replace none with missing
+
+list6 = ["Apple", "mango", None, "Help", None, None]
+cleaned_up = ["Missing" if val == None else val for val in list6]
+logger.info(cleaned_up)
+
+
