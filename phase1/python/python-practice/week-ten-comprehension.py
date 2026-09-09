@@ -50,3 +50,19 @@ list6 = [[1, 2, 3], [3, 4, 5], [5, 6, 7], [8, 9, 10]]
 
 flatten_list = [num for sublist in list6 for num in sublist]
 logger.info(flatten_list)
+
+def contains_vovel(word):
+    vovels = ['a', 'e', 'i', 'o', 'u']
+    for letter in vovels:
+        if word.startswith(letter):
+            return word
+        else:
+            pass
+        
+words = ["apple", "banana", "orange", "grape", "umbrella", "kiwi"]
+vovels_only = [contains_vovel(word) for word in words]
+
+logger.info(f"First try: ",vovels_only)
+
+new_list = [word for word in words if word[0] in 'aeiou']
+logger.info("2nd attemps: {}".format(new_list))
