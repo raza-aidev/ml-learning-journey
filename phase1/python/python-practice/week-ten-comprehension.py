@@ -35,8 +35,18 @@ logger.info(even_nums)
 
 # replace none with missing
 
-list6 = ["Apple", "mango", None, "Help", None, None]
-cleaned_up = ["Missing" if val == None else val for val in list6]
-logger.info(cleaned_up)
+# list6 = ["Apple", "mango", None, "Help", None, None]
+# cleaned_up = ["Missing" if val == None else val for val in list6]
+# logger.info(cleaned_up)
 
 
+# dict1 = {"Apple": 12, "TV": 123, "Toy": 2, "Baseball Bat": 102}
+
+# discounted_price = {price if price < 100 else (price%0.2) + price for prod, int(price) in enumerate(dict1)}
+# logger.info(discounted_price)
+
+
+list6 = [[1, 2, 3], [3, 4, 5], [5, 6, 7], [8, 9, 10]]
+
+flatten_list = [num for sublist in list6 for num in sublist]
+logger.info(flatten_list)
