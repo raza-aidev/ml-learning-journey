@@ -1,4 +1,5 @@
-from itertools import count, islice
+from itertools import count, islice, repeat, cycle
+import logging
 
 counter = list(islice(count(0,15),6))
 
@@ -18,4 +19,22 @@ def counter(start, step):
         if x == 100:
             break
 
-counter(0, 1)
+# counter(0, 1)
+
+repeater = list(repeat("Hello", 4))
+print(repeater)
+
+logger = logging.getLogger("week-ten-itertools")
+logger.setLevel(logging.INFO)
+
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+
+logger.addHandler(console)
+
+list1 = ['Hello', 'This', 'Is ', 'Raza']
+rep = list(repeat(list1, 6))
+logger.info(f"repeat: {rep}")
+
+rep2 = islice(cycle(list), 6)
+print(rep1)
