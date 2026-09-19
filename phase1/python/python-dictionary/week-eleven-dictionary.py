@@ -50,3 +50,21 @@ logger.info(f"Original Dict: {details}")
 details["Surname"] = "Khan"
 
 logger.info(f"Updated dictionary: {details} ")
+
+# Deletion of data from dictionary
+
+del details["Surname"]
+logger.info(details)
+
+# del details["Surname"] # If the keywe are deleting from the dict is not present and we are usinf del keyword for deletion then we will get KeyError
+# logger.info(details)
+
+popped_details = details.pop("Age")
+logger.info(f"Popped Value: {popped_details}")
+logger.info(f"Final details: {details}")
+
+last_item = details.popitem()
+logger.info(f"Last Pooped Item: {last_item}")
+
+details.clear()
+logger.info(f"Emptyed Dict: {details}")
