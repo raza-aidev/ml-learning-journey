@@ -68,3 +68,6 @@ logger.info(f"Last Pooped Item: {last_item}")
 
 details.clear()
 logger.info(f"Emptyed Dict: {details}")
+
+details.clear()
+logger.info(f"Emptyed Dict: {details}")
