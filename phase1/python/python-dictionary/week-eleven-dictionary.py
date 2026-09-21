@@ -69,5 +69,17 @@ logger.info(f"Last Pooped Item: {last_item}")
 details.clear()
 logger.info(f"Emptyed Dict: {details}")
 
-details.clear()
-logger.info(f"Emptyed Dict: {details}")
+
+d3 = dict([("age", 12), ("weight", "5 2'")])
+logger.info(f"Dictionary creation via list & tuple {d3}")
+
+d4 = dict(zip([1, 2, 3], (34, 4, 5)))
+print(f'Dictionary creation using zip function: {d4}')
+
+#create dictionary with specific set of keys and default value
+keys = ["Kullar", "Pindal Pipes", "Sweet Display tray"]
+d4 = dict.fromkeys(keys, [12])
+logger.info(f"Dictionary with set of keys and default values: {d4}")
+
+d4["Kullar"].append(2)
+logger.info(d4)
