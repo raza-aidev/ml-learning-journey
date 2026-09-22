@@ -1,4 +1,5 @@
 from itertools import count, islice, cycle, repeat, chain
+import itertools
 import logging
 
 logger = logging.getLogger("week-twelve-itertools")
@@ -30,3 +31,15 @@ logger.info(list1)
 
 list2 = list(islice(range(40), 3, 35, 3))
 logger.info(list2)
+
+numbers = [1, 2, 3, 4, 5]
+
+output = list(itertools.accumulate(numbers, lambda x, y : x * y))
+logger.info(output)
+
+rand_list = ['c', 'a', 'k', 'e']
+output2 = list(itertools.accumulate(rand_list)) 
+logger.debug(output2)
+
+output3 = list(itertools.accumulate("abc", lambda x, y: x*3 + y*2))
+logger.debug(output3)
