@@ -28,4 +28,5 @@ logger.info(f'Use of chain function: {use_of_chain}')
 list1 = list(islice(range(0, 11), 5))
 logger.info(list1)
 
-list2 = list(islice())
+list2 = list(islice(range(40), 3, 35, 3))
+logger.info(list2)
