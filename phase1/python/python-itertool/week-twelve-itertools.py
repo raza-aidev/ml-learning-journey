@@ -63,3 +63,33 @@ from functools import reduce
 
 output8 = reduce(lambda x,y: x*y ,numbers2)
 logger.debug(output8)
+
+students = [
+    {'Name': 'Alice', 'Grade': 'A'},
+    {'Name': 'Jhon', 'Grade': 'C'},
+    {'Name': 'Suraj', 'Grade': 'A'},
+    {'Name': 'Malti', 'Grade': 'B'},
+    {'Name': 'Tony', 'Grade': 'B'},
+    {'Name': 'Jack', 'Grade': 'C'}
+]
+
+# def get_grade(students):
+#     for student in students:
+#         return student['Grade']
+
+
+# sorted_list = students.sort(key = get_grade(students))
+
+# logger.info(sorted_list)
+
+
+list1 = [1, 2, 1, 3, 4, 3, 4, 6, 1]
+
+list1.sort()
+
+logger.info(f"Sorted list: {list1}")
+
+age = [('Alice', 56), ('Memon', 99), ('Adil', 67)]
+age.sort(key = lambda a:(a[0], a[1]))
+
+logger.info(age)
