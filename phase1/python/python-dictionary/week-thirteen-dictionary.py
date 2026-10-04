@@ -65,3 +65,45 @@ logger.info(f'state: {data.get("State","Maharshtra")}')
 
 data.update({"State": "Maharashtra"}) 
 logger.info(data)
+
+data.update({"Last_name": "S"})
+
+logger.info(f'{data}')
+
+
+
+data2 = {
+    "Name": "Raza",
+    "Age": 30,
+    "Weight (Kg)": 109,
+    "Height (cm)": 114
+}
+
+data.setdefault("Name", "Raza AI")
+print(data)
+data.setdefault("City", "Pune")
+print(data)
+
+
+dataset = ["apple", 'Banana', 'Kiwi', "Orange", 'Dragonfruit', "Papaya", "Watermelon", "Malta", "Guava", "Pineapple", "chiku"]
+sets = {}
+for word in dataset:
+    sets.setdefault(word[0], []).append(word)
+
+print(sets)
+
+# Separate the students according to classes
+
+student_details = [("Class A", "Navin"), ("Class A", "Pravin"), ("Class C", "Radha"), ("Class B", "Rudra"), ("Class C", "Abhinav"), ("Class A", "Uday"), ("Class B", "Mala"), ("Class C", "Sapna")]
+
+sections_details = {}
+
+for key, value in student_details:
+    sections_details.setdefault(key, []).append(value)
+
+print(sections_details)   
+
+
+diction_of_nums = {x: x**2 for x in range(1, 10)}
+print(diction_of_nums)
+ 
