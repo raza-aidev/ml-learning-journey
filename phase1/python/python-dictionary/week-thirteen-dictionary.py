@@ -106,4 +106,16 @@ print(sections_details)
 
 diction_of_nums = {x: x**2 for x in range(1, 10)}
 print(diction_of_nums)
+
+
+num_type = {x: ("Even" if x%2 == 0 else "Odd") for x in range(1,20)}
+print(f"Dictionary comprehension: {num_type}")
  
+num_type_2 = {x: "even" for x in range(1, 20) if x%2==0}
+print(num_type_2)
+
+keys = ["Name", "City", "State"]
+values = ["Riya", "Kolkata", "Karanakata"]
+
+details = {k : v for k, v in zip(keys, values)}
+print(details)
