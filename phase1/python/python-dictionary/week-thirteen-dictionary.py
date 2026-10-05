@@ -119,3 +119,28 @@ values = ["Riya", "Kolkata", "Karanakata"]
 
 details = {k : v for k, v in zip(keys, values)}
 print(details)
+
+dict1 = {"Key1": "Value1", "Key2": "Value2", "Key3": "Value3"}
+
+swapping_details = {v: k for k, v in dict1.items()}
+print(swapping_details)
+
+prices = {"Apple":180, "Banana":60, "Guava":100, "Pineapple":200}
+
+discounted_Price = {x: price*0.9 for x, price in prices.items() if price>50}
+print(discounted_Price)
+
+nested_dict = {i: {j: i*j for j in range(1, 4)} for i in range(1, 4)}
+print(nested_dict)
+
+# Cubes of nums 1 to 10
+cubes = {x: x**3 for x in range(1, 10)}
+print(cubes)
+
+#Each number is num + 10
+nums = {x: x+10 for x in range(1, 10)}
+print(nums)
+
+#Keys are the letters from "python" word and values are the ASCII values of those letters
+
+python_asscii = {}
