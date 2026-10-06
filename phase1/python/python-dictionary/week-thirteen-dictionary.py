@@ -143,4 +143,8 @@ print(nums)
 
 #Keys are the letters from "python" word and values are the ASCII values of those letters
 
-python_asscii = {}
+python_asscii = {x: ord(x) for x in "python"}
+print(python_asscii)
+
+even_or_odd = {x: "Even" if x%2==0 else "Odd" for x in range(1 ,5)}
+print(even_or_odd)
