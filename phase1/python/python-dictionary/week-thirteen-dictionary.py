@@ -148,3 +148,20 @@ print(python_asscii)
 
 even_or_odd = {x: "Even" if x%2==0 else "Odd" for x in range(1 ,5)}
 print(even_or_odd)
+
+
+# keys = ["Even", "Odd"]
+dict2 = {"Even": [], "Odd": []}
+
+for i in range(1, 5):
+    if i%2==0:
+        dict2.setdefault("Even", []).append(i)
+    else:
+        dict2.setdefault("Odd", []).append(i)
+
+print(dict2)
+
+#Create a dictionary of numbers from 1 to 20 with their squares, but include only even numbers.
+
+comp_dict = {x: x**2 for x in range(1, 20) if x%2 == 0 }
+print(comp_dict)
