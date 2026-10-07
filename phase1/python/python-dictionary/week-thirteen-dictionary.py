@@ -165,3 +165,27 @@ print(dict2)
 
 comp_dict = {x: x**2 for x in range(1, 20) if x%2 == 0 }
 print(comp_dict)
+
+#Build a dictionary of numbers from 1 to 30 with their cubes, but include only numbers divisible by 3.
+odd_dict = {x: x**3 for x in range(1, 20) if x%3 ==0}
+print(odd_dict)
+
+#From a list of numbers, create a dictionary of only positive numbers and their squares.
+nums = [1, -3, 3, 4, -14, 45, -3, -5, 10, 11]
+pos_dict = {x: x**2 for x in nums if x>0}
+print(pos_dict)
+
+#From a string, create a dictionary of vowels and their index positions.
+string = "itensifyeuownssfurirtaneoqur"
+vovels = {x: string.find(x) for x in string if x in 'aeiou'}
+print(vovels)
+
+vovels_count = {}
+
+for x in string:
+    if x in 'aeiou':
+        index = string.find(x)
+        vovels_count.setdefault(x, [index])
+
+print(vovels_count)
+
