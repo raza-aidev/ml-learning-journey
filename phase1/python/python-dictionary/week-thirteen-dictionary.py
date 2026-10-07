@@ -189,3 +189,21 @@ for x in string:
 
 print(vovels_count)
 
+
+cart = ["Apple", "Banana", "Chiku", "Pineapple"]
+dict_values = {index: value for index , value in enumerate(cart)}
+
+print(dict_values)
+
+print(set(dict_values))
+
+cart1 = {"Mango": 12, "Pineapple":2, "Banana":12}
+cart2 = {"Peach": 4, "Guava": 7, "Pineapple":1}
+print(cart1.get("Mango", 0))
+sum_of_carts = {fruite: (cart1.get(fruite, 0) + cart2.get(fruite, 0)) for fruite in set(cart1)|set(cart2)}
+print(sum_of_carts)
+
+cart3 = {"Apple Juice": 2, "Protein Powder": 1, "Guava": 1}
+
+sum_of_all_carts = {item: (cart1.get(item, 0) + cart2.get(item, 0) + cart3.get(item, 0)) for item in set(cart1)|set(cart2)|set(cart3)}
+print(sum_of_all_carts)
