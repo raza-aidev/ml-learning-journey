@@ -248,3 +248,19 @@ counter = Counter(string)
 print(counter)
 
 print(counter.most_common(4))
+
+dict5 = {
+    "employee1": {
+        "name": "Raza",
+        "Age": 12,
+        "Height": "4 3'"
+    },
+    "employee2": {
+        "name": "Zara",
+        "Age": 18,
+        "Height": "5 3'"
+    }
+}
+
+for emp in dict5.keys():
+    print(f'dict5.setdefault(emp, {})')
