@@ -207,3 +207,17 @@ cart3 = {"Apple Juice": 2, "Protein Powder": 1, "Guava": 1}
 
 sum_of_all_carts = {item: (cart1.get(item, 0) + cart2.get(item, 0) + cart3.get(item, 0)) for item in set(cart1)|set(cart2)|set(cart3)}
 print(sum_of_all_carts)
+
+
+company = {
+    "employee1": {"name": "Riya", "dept": "IT", "salary": 50000},
+    "employee2": {"name": "Aman", "dept": "HR", "salary": 45000}
+}
+
+for emp_id, details in company.items():
+    print("--------------xx---------------")
+    print(f"Employee ID: "+ emp_id)
+    for key, value in details.items():
+        print(f"{key}: {value}")
+
+
