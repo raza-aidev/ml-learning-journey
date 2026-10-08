@@ -221,3 +221,30 @@ for emp_id, details in company.items():
         print(f"{key}: {value}")
 
 
+dict1 = {"Item1": "Apple", "Item2": "Banana"}
+dict3 = {"Item2": "Jack Fruite", "Item3": "Pineapple", "Item4": "Kiwi"}
+
+new_dict = {**dict1, **dict3}
+
+dict1.update(dict3)
+print(dict1)
+
+new_dict1 = dict1 | dict3
+print(new_dict1)
+
+dict3 |= dict1
+print(dict3)
+
+from collections import defaultdict, Counter
+
+dict4 = defaultdict(int)
+dict4["alpha"] += 12
+dict4["beta"] = 13
+
+print(dict4)
+
+string = "aabgsgsgkfheyabbse"
+counter = Counter(string)
+print(counter)
+
+print(counter.most_common(4))
