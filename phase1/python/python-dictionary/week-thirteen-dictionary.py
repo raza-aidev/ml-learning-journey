@@ -209,16 +209,16 @@ sum_of_all_carts = {item: (cart1.get(item, 0) + cart2.get(item, 0) + cart3.get(i
 print(sum_of_all_carts)
 
 
-company = {
-    "employee1": {"name": "Riya", "dept": "IT", "salary": 50000},
-    "employee2": {"name": "Aman", "dept": "HR", "salary": 45000}
-}
+# company = {
+#     "employee1": {"name": "Riya", "dept": "IT", "salary": 50000},
+#     "employee2": {"name": "Aman", "dept": "HR", "salary": 45000}
+# }
 
-for emp_id, details in company.items():
-    print("--------------xx---------------")
-    print(f"Employee ID: "+ emp_id)
-    for key, value in details.items():
-        print(f"{key}: {value}")
+# for emp_id, details in company.items():
+#     print("--------------xx---------------")
+#     print(f"Employee ID: "+ emp_id)
+#     for key, value in details.items():
+#         print(f"{key}: {value}")
 
 
 dict1 = {"Item1": "Apple", "Item2": "Banana"}
@@ -263,4 +263,49 @@ dict5 = {
 }
 
 for emp in dict5.keys():
-    print(f'dict5.setdefault(emp, {})')
+    print(dict5.setdefault(emp, {}))
+
+#-----------------------XX--------------------
+
+from collections import Counter
+
+string1 = "wtewytewetuwebsdhiioejnsjhx zw-dwieweiuwijdskd"
+
+count = Counter(string1)
+print(count)
+
+count_dict = {}
+for ch in string1:
+    if count_dict.get(ch):
+        count_dict[ch] +=1
+    else:
+        count_dict[ch] = 1
+
+print(count_dict)
+    # count_dict.setdefault(ch, 1) = {}
+for ch in string1:
+    count_dict.get(ch, 0) + 1
+
+print(count_dict)
+
+# Merge 2 dictionaries such that if 2 same keys exists their values should be added
+
+cart_of_fruite_1 = {
+    "Banana": 12,
+    "Apple": 4,
+    "Kiwi": 5,
+    "Guava": 3
+}
+
+cart_of_fruite_2 = {
+    "Banana": 6,
+    "Coconut": 1,
+    "Pineapple": 1,
+    "Watermelon": 1
+}
+
+cart_of_fruite = {fruite: cart_of_fruite_1.get(fruite, 0) + cart_of_fruite_2.get(fruite, 0) for fruite in set(cart_of_fruite_1)|set(cart_of_fruite_2)}
+
+print(f"Final cart: {cart_of_fruite}")
+
+
