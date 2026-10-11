@@ -290,22 +290,36 @@ print(count_dict)
 
 # Merge 2 dictionaries such that if 2 same keys exists their values should be added
 
-cart_of_fruite_1 = {
+cart_of_fruit_1 = {
     "Banana": 12,
     "Apple": 4,
     "Kiwi": 5,
     "Guava": 3
 }
 
-cart_of_fruite_2 = {
+cart_of_fruit_2 = {
     "Banana": 6,
     "Coconut": 1,
     "Pineapple": 1,
     "Watermelon": 1
 }
 
-cart_of_fruite = {fruite: cart_of_fruite_1.get(fruite, 0) + cart_of_fruite_2.get(fruite, 0) for fruite in set(cart_of_fruite_1)|set(cart_of_fruite_2)}
+cart_of_fruits = {fruit: cart_of_fruit_1.get(fruit, 0) + cart_of_fruit_2.get(fruit, 0) for fruit in set(cart_of_fruit_1)|set(cart_of_fruit_2)}
 
-print(f"Final cart: {cart_of_fruite}")
+print(f"Final cart: {cart_of_fruits}")
+
+
+#find a key with the maximum value in dictionary
+
+def get_max_value_key(cart_of_fruits):
+    max_value = 0
+    for fruit_name, value in cart_of_fruits.items():
+        if value >= max_value:
+            max_value = value
+    
+    return max_value
+
+max_key = get_max_value_key(cart_of_fruits)
+print(f"Max value: {max_key}")
 
 
