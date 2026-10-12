@@ -313,13 +313,30 @@ print(f"Final cart: {cart_of_fruits}")
 
 def get_max_value_key(cart_of_fruits):
     max_value = 0
+    max_key = ""
     for fruit_name, value in cart_of_fruits.items():
         if value >= max_value:
             max_value = value
+            max_key = fruit_name
     
-    return max_value
+    return max_value, max_key
 
-max_key = get_max_value_key(cart_of_fruits)
-print(f"Max value: {max_key}")
+max_value, max_key = get_max_value_key(cart_of_fruits)
+print(f"Max value => {max_key}: {max_value}")
+
+max_quantity = max(cart_of_fruits, key= cart_of_fruits.get)
+print(max_quantity)
+
+
+students = [ {'name': 'A', 'score': 82}, {'name': 'B', 'score': 91}, {'name': 'C', 'score': 78} ]
+max_dict_value = max(students, key= lambda s: s["score"])
+print(max_dict_value)
+
+list_str = ["Box", "bob", "box"]
+print(max(list_str))
+
+# Verifiying empty iterable
+list_empty = []
+print(max(list_empty, default=10))
 
 
