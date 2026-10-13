@@ -340,3 +340,11 @@ list_empty = []
 print(max(list_empty, default=10))
 
 
+# arguments vs iterables in max function (default values are not allowed with arguments, on the other hand default value is acceptable with iterables)
+
+nums = [1, 10, 14, 13]
+max_num = max(nums, default=20)
+print(max_num)
+
+max_uniq_nums = max(12, 3, 4)
+print(max_uniq_nums)
