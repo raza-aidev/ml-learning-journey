@@ -348,3 +348,17 @@ print(max_num)
 
 max_uniq_nums = max(12, 3, 4)
 print(max_uniq_nums)
+
+
+print(f"getitem function: {nums.__getitem__(1)}")
+max_item = max(range(len(nums)), key=nums.__getitem__)
+print(max_item)
+
+#scores = {"Riya": 85, "Aman": 92, "Sita": 78}
+scores = {"Riya": 85, "Aman": 92, "Sita": 78}
+max_percent = max(scores, key=scores.get)
+print(f"Max scores: {max_percent}")
+
+temp = [100, 14, 12, 15]
+max_temp = max(range(len(temp)), key=temp.__getitem__)
+print(f"Print the index of highest temperature: {max_temp}  & value: {temp[max_temp]}")
