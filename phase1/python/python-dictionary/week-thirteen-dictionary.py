@@ -362,3 +362,32 @@ print(f"Max scores: {max_percent}")
 temp = [100, 14, 12, 15]
 max_temp = max(range(len(temp)), key=temp.__getitem__)
 print(f"Print the index of highest temperature: {max_temp}  & value: {temp[max_temp]}")
+
+
+#Swap keys and values 
+
+data = {
+    "Alpha" : 1,
+    "Beta": 2,
+    "Theta" : 3,
+    "Gama" : 4
+}
+
+new_values = {value: key for key, value in data.items()}
+print(f"Swapped Dictionary: {new_values}")
+
+
+words = ["Apple", "Banana", "Mango", "Pineapple", "Watermelon"]
+dict_of_word = {word[0]: word for word in words}
+
+print(f"dictionary of words: {dict_of_word}")
+
+words2 = ["Apple", "Banana", "Mango", "Pineapple", "Watermelon", "Ants", "Mutton", "Marvel", "Papaya", "Kivi", "Box", "Bubble", "Water", "Wax", "Pudding"]
+
+dict_of_words = {}
+
+for word in words2:
+   dict_of_words.setdefault(word[0], []).append(word)
+
+print(f"Set of word sarting with same letter: {dict_of_words}") 
+
