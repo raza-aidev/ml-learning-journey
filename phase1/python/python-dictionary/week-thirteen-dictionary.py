@@ -404,3 +404,13 @@ print(f"Dictionary with no 'None' values: {filtered_data}")
 people = [{"name": "A", "Age": "33"}, {"name":"B", "Age":"12"}, {"name":"C", "Age":"42"}]
 sorted_list = sorted(people, key= lambda d: d["Age"])
 print(f"Sorted List of Dictionary: {sorted_list}")
+
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 1, "a": 2}
+
+print(f"Are dictionaries equal: {d1 == d2}")
+
+
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 2, "a": 1}
+print(f"Are dictionaries equal: {d1 == d2}")
