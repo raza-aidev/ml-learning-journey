@@ -391,3 +391,16 @@ for word in words2:
 
 print(f"Set of word sarting with same letter: {dict_of_words}") 
 
+#Remove the key value pair from 
+scores_of_marathon = {"Joshwa": "Completed", "Jhon": "Completed", "Yael": None, "Anika": "Completed", "Mikki": "Completed", "Tim": None}
+filtered_data = {}
+for key, value in scores_of_marathon.items():
+    if value == None:
+        continue
+    filtered_data[key] = value
+
+print(f"Dictionary with no 'None' values: {filtered_data}")
+
+people = [{"name": "A", "Age": "33"}, {"name":"B", "Age":"12"}, {"name":"C", "Age":"42"}]
+sorted_list = sorted(people, key= lambda d: d["Age"])
+print(f"Sorted List of Dictionary: {sorted_list}")
