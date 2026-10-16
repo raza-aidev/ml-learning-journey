@@ -1,4 +1,4 @@
-from itertools import count, islice, cycle, repeat
+from itertools import count, islice, cycle, repeat, chain, tee
 
 # Problem 1: Basic use of count
 counter = count(0, 2)
@@ -18,3 +18,30 @@ print(f"{list(islice(cycle(list1), 17))}")
 ## Use of repeate, it repeats the element with stop value.
 
 print(f"{list(repeat(12, 19))}")
+
+
+#chain (sntax: chain(*iterables))  Helps in conbining the iterables
+
+num1 = [1, 2, 3, 4]
+num2 = [12, 13, 14, 15]
+
+print(f"Chained iterables: {list(chain(num1, num2, range(1, 11)))}")
+
+# chain method for flatening 
+num1 = [1, 2, 3]
+num2 = [1]
+num3 = [12, 13, 14]
+empt = list(chain(num1, num2, num3))
+
+print(empt)
+
+#islice with counter
+
+print(f"{list(islice(range(0, 20), 0, 20, 2))}")
+
+#tee function
+
+it = [1, 2, 3]
+a, b, c = tee(it, 3)
+print(list(a), list(b), list(c))
+
