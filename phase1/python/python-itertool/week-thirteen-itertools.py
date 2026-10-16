@@ -1,4 +1,4 @@
-from itertools import count, islice, cycle, repeat, chain, tee
+from itertools import count, islice, cycle, repeat, chain, tee, product, permutations, combinations
 
 # Problem 1: Basic use of count
 counter = count(0, 2)
@@ -45,3 +45,8 @@ it = [1, 2, 3]
 a, b, c = tee(it, 3)
 print(list(a), list(b), list(c))
 
+items = [1, 2, 3 , 4]
+print(f"Cartision products: {list(product(items, repeat=2))}")
+print(f"Permutaions: {list(permutations(items, 2))}")
+
+print(f"{list(combinations(items, 2))}")
