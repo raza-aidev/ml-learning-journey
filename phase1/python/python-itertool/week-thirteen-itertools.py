@@ -70,3 +70,21 @@ logger.debug(f"{list(new_list)}")
 new_items = [3, 1, 4, 2, 2, 7, 1, 9, 1]
 new_list2 = list(accumulate(new_items, max))
 logger.debug(f"Accumulate function with max: {new_list2}")
+
+
+#Basic examples of accumulate
+from itertools import accumulate
+import operator
+
+nums = [1, 3, 1, 5, 12]
+logger.debug(f"Basic examples of Accumulate: {list(accumulate(nums))}")
+
+#Accumulate examples with operator module (cumulative product)
+nums2 = [2, 4, 5, 1, 9, 12]
+logger.info(f"Use of Operator in accumulate: {list(accumulate(nums2, operator.mul))}")
+
+# operator.sub
+nums3 = [2, 4, 5, 6, 7]
+logger.info(f"Use of Operator in Accumulate: {list(accumulate(nums3, operator.sub))}")
+
+
