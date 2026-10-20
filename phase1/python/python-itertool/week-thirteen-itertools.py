@@ -1,5 +1,13 @@
-from itertools import count, islice, cycle, repeat, chain, tee, product, permutations, combinations
+from itertools import count, islice, cycle, repeat, chain, tee, product, permutations, combinations, accumulate
+import logging
 
+logger = logging.getLogger("week-thirteen-itertools")
+logger.setLevel(logging.DEBUG)
+
+console = logging.StreamHandler();
+console.setLevel(logging.DEBUG)
+
+logger.addHandler(console)
 # Problem 1: Basic use of count
 counter = count(0, 2)
 print(f"{list(islice(counter, 10))}")
@@ -50,3 +58,15 @@ print(f"Cartision products: {list(product(items, repeat=2))}")
 print(f"Permutaions: {list(permutations(items, 2))}")
 
 print(f"{list(combinations(items, 2))}")
+
+#accumulate: with default running SUM
+
+nums_to_Accumulate = [1, 2, 3, 4, 5, 6]
+new_list = accumulate(nums_to_Accumulate)
+logger.debug(f"{list(new_list)}")
+
+#Accumulate: with max fucntion
+
+new_items = [3, 1, 4, 2, 2, 7, 1, 9, 1]
+new_list2 = list(accumulate(new_items, max))
+logger.debug(f"Accumulate function with max: {new_list2}")
