@@ -87,4 +87,21 @@ logger.info(f"Use of Operator in accumulate: {list(accumulate(nums2, operator.mu
 nums3 = [2, 4, 5, 6, 7]
 logger.info(f"Use of Operator in Accumulate: {list(accumulate(nums3, operator.sub))}")
 
+# Accumulate: Max and custom module
+nums4 = (12, 23, 13 ,14, 11)
+logger.info(f"Example of Accumulate with MAX: {list(accumulate(nums4, max))}")
 
+# Accumulate: With custom method
+
+# nums5 = [130, 230, 234, 340, 450, 990, 900]
+# logger.info(f"Examples of custom method (30% of each value): {list(accumulate(nums5, lambda x, y = 0.3: x*y))}")
+
+nums5 = [130, 230, 100, 234, 340, 450, 990, 99, 900]
+logger.info(f"Examples of Accumulate with min function: {list(accumulate(nums5, min))}")
+
+# Accumulate: Exampels with intial value to accumulate.
+savings = [120, 100, 190, 1000, 13]
+print(f"Example of accumulate with initial value: {list(accumulate(savings, initial=1000))}")
+
+nums6 = [140, 12, 13, 11, 9]
+print(f"Sum with initial value: {list(accumulate(nums6, initial=10))}")
