@@ -105,3 +105,13 @@ print(f"Example of accumulate with initial value: {list(accumulate(savings, init
 
 nums6 = [140, 12, 13, 11, 9]
 print(f"Sum with initial value: {list(accumulate(nums6, initial=10))}")
+
+#groupby: Method
+from itertools import groupby
+
+words = ['Cat', 'Bat', 'Salt', 'Beautiful', 'Alfaaz']
+words.sort(lambda x:x[0])
+grouped_words = list(groupby(words, key=lambda y:y[0]))
+
+for letters, group in grouped_words:
+    print(f"Wrod groups: {letters}: {group}")
