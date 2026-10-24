@@ -110,8 +110,58 @@ print(f"Sum with initial value: {list(accumulate(nums6, initial=10))}")
 from itertools import groupby
 
 words = ['Cat', 'Bat', 'Salt', 'Beautiful', 'Alfaaz']
-words.sort(lambda x:x[0])
-grouped_words = list(groupby(words, key=lambda y:y[0]))
+words.sort(key=lambda x:x[0])
+
+# print(words)
+grouped_words = groupby(words, key=lambda y:y[0])
 
 for letters, group in grouped_words:
-    print(f"Wrod groups: {letters}: {group}")
+    print(f"Wrod groups: {letters}: {list(group)}")
+
+#Question 2
+words2 = ['Alpha', 'Gama', 'Omega', 'Sitcom', 'Wazeer', 'Baloon']
+words2.sort(key=lambda x:x[0])
+
+for letters, groups in groupby(words2, key=lambda y:y[0]):
+    print(f"Letters {letters}: {list(groups)}")
+
+#Question 3
+
+data = ['word', 'Wife', 'Apple', 'alpha', 'Mango', 'Montage']
+
+grouped = groupby(data, key=lambda x: x[0].upper())
+# print(list(grouped))
+for letters, group in grouped:
+    print(f"{letters}: {list(group)}")
+
+#Question 4:
+data_Dict = [
+    {"Hostel":'B', 'Name':'Kalki', 'State':'Maharshtra'},
+    {"Hostel":'A', 'Name':'Shehzadi', 'State':'Kashmir'}, 
+    {"Hostel":'B', 'Name':'Kumud', 'State':'Delhi'}, 
+    {"Hostel":'A', 'Name':'Vadkadni', 'State':'Karnataka'}
+    ]
+sorted_Data = sorted(data_Dict, key=lambda x:x['Hostel'])
+
+grouped_data = groupby(sorted_Data, key=lambda x:x['Hostel'])
+for letter, group in grouped_data:
+    print(f"{letter}: {list(group)}")
+
+
+# Question 6: Group people by city
+
+people = [
+    {"City":'New York', 'Name':'Kalki', 'State':'Maharshtra'},
+    {"City":'LA', 'Name':'Shehzadi', 'State':'Kashmir'}, 
+    {"City":'New York', 'Name':'Kumud', 'State':'Delhi'}, 
+    {"City":'New York', 'Name':'Vadkadni', 'State':'Karnataka'},
+    {"City":'Manchester', 'Name':'Jhon', 'State':'Karnataka'}
+]
+
+sorted_Data = sorted(people, key=lambda x:x.get('City'))
+grouped_data = groupby(sorted_Data, key=lambda x:x.get('City'))
+
+for city, group in grouped_data:
+    print(f'{city}: ', end="")
+    for person in group:
+        print(f'{person.get("Name")}',end=",")
