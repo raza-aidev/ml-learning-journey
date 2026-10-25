@@ -165,3 +165,23 @@ for city, group in grouped_data:
     print(f'{city}: ', end="")
     for person in group:
         print(f'{person.get("Name")}',end=",")
+    print('')
+
+#starmap - the unpacker - it unpacks the list/tuple to a function
+from itertools import starmap
+import operator
+
+coords = [[1, 2, 3], [3, 4, 3], [10, 12, 3], [1, 14, 3]]
+def add_coords(x, y, z):
+    return x+y+z
+
+result = starmap(add_coords, coords)
+print(f"Starmap result: {list(result)}")
+
+#unpack of tuple
+data10 = [(12, 3, 1), (12, 13, 14), (110, 19, 19)]
+def prod(x, y, z):
+    return x*y*z
+
+result1 = list(starmap(prod, data10))
+print(f"{result1}")
