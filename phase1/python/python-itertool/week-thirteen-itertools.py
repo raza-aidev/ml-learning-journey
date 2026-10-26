@@ -196,3 +196,25 @@ total_saving = list(accumulate(savings))
 
 print(f'Balance of your account is: Rs {total_saving[(len(total_saving)-1)]}')
 
+#compress: the selector - it uses a selector iterable that passes only the true value
+from itertools import compress 
+
+selecter = [1, 0, 1, 0, 1, 1, 0]
+list1 = ["Apple", "mango", "Banana", "Pineapple", "Mudapple"]
+
+result = list(compress(list1, selecter))
+print(result)
+
+#filterfalse: it passes only the values for which the predicate is false
+
+from itertools import filterfalse
+
+number = [100, 200, 300, 400]
+result = list(filterfalse(lambda x: x>100, number))
+
+print(result)
+
+data = ['alpha', None, 'Gama', "Theeta", None]
+result2 = list(filterfalse(lambda y: y is None, data))
+
+print(result2)
