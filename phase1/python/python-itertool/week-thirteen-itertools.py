@@ -185,3 +185,14 @@ def prod(x, y, z):
 
 result1 = list(starmap(prod, data10))
 print(f"{result1}")
+
+
+#examples of accumulate
+
+from itertools import accumulate
+
+savings = [100, 10000, 203303, 102290.12, 1000]
+total_saving = list(accumulate(savings))
+
+print(f'Balance of your account is: Rs {total_saving[(len(total_saving)-1)]}')
+
