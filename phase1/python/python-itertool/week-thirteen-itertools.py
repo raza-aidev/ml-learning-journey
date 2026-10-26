@@ -218,3 +218,18 @@ data = ['alpha', None, 'Gama', "Theeta", None]
 result2 = list(filterfalse(lambda y: y is None, data))
 
 print(result2)
+
+
+# dropwhile: it will skip the data until the condition is true
+from itertools import dropwhile
+
+data2 = [1, 2, 3, 4, 5, 6, 7]
+result3 = list(dropwhile(lambda x: x < 3, data2))
+
+print(result3)
+
+prices = [120, 134, 156, 150 , 155, 170, 180]
+final_items = list(dropwhile(lambda r: r < 160, prices))
+
+print(final_items)
+
