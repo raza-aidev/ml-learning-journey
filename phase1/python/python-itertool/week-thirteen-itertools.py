@@ -233,3 +233,10 @@ final_items = list(dropwhile(lambda r: r < 160, prices))
 
 print(final_items)
 
+data4 = ["Mango", "Lichi", "Banana", "Kiwi", "Orange"]
+data4.sort(key=lambda x: x[0])
+
+result5 = groupby(data4, key=lambda r: r[0])
+
+for letters, group in result5:
+    print(f"{letters}: {list(group)}")
