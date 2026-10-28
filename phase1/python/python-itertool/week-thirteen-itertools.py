@@ -240,3 +240,15 @@ result5 = groupby(data4, key=lambda r: r[0])
 
 for letters, group in result5:
     print(f"{letters}: {list(group)}")
+
+from itertools import zip_longest
+
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c', 'd']
+
+print(f'Zipped: {list(zip_longest(list1, list2, fillvalue="*"))}')
+
+list3 = ['a', 'b', 'c']
+list4 = [(12, 13), (12, 15), (99, 10)]
+
+print(f"Zipped2: {list(zip_longest(list3, list4, fillvalue=None))}")
